@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+ 
+.navMenu{
+    height: 300px;
+    width: 100%;
+    position: relative;
+    background-color: black;;
+}
+
+.placeholder {
+    text-align: center;
+    color: white;
+}
