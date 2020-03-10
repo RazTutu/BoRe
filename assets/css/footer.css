@@ -1,0 +1,43 @@
+
+html{
+    position: relative;
+   min-height: 100%;
+}
+
+.contentWrapper{
+    margin-bottom: 10em;
+}
+
+.mainFooter{
+    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10em;
+    background: #ccc;
+    display: flex;
+    justify-content: space-around;
+    
+    
+}
+.footerElement{
+    height: 9,5em;
+    width: 16em;
+    border: 2px solid red;
+
+}
+@media screen and (max-width:800px){
+    .mainFooter{
+        
+        height: 20em;
+        flex-direction: column;
+      
+
+    }
+    .contentWrapper{
+        margin-bottom: 20em;
+    }
+    
+
+}
