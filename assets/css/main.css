@@ -145,3 +145,21 @@
       }
 
   }
+
+.login-class{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+.listForLogin{
+  list-style-type: none;
+}
+
+.loginElement{
+  display: flex;
+  margin: 0.25em;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
