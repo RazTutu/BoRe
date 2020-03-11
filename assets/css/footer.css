@@ -5,7 +5,7 @@ html{
 }
 
 .contentWrapper{
-    margin-bottom: 10em;
+    margin-bottom: 25em;
 }
 
 .mainFooter{
@@ -14,30 +14,161 @@ html{
     bottom: 0;
     left: 0;
     right: 0;
-    height: 10em;
-    background: #ccc;
+    height: 25em;
+    background: rgb(18, 4, 66);
     display: flex;
     justify-content: space-around;
+    width: 100%;
     
     
+}
+.innerFooter{
+    width: 95%;
+    margin: auto;
+    padding: 2em 1em;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: center;
+
 }
 .footerElement{
     height: 9,5em;
-    width: 16em;
-    border: 2px solid red;
+    width: 25%;
+    padding: 1em 2em;
+    box-sizing: border-box;
+   
 
 }
-@media screen and (max-width:800px){
+.footerElementforLocation{
+    
+    height: 9,5em;
+    width: 25%;
+    padding: 1em 2em;
+    box-sizing: border-box;
+}
+.footerElement h1{
+    padding: 1em 0;
+    font-size: 25px;
+    color: orangered;
+   
+
+}
+.footerElement p{
+    color: grey;
+    font-size: 20px;
+    text-align: justify;
+    line-clamp: 25px;
+
+}
+.footerElement h2{
+    margin: 1em 0;
+    color: grey;
+    font-size: 16px;
+    font-weight:  lighter;
+
+}
+.border{
+    height: 3px;
+    width: 5em;
+    background: peachpuff;
+
+}
+.borderUp{
+    margin-bottom: 7px;
+}
+.borderUpforLocation{
+   
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+   
+  
+}
+.mainFooter ul{
+    list-style: none;
+    color: seagreen;
+    font-size: 20px;
+    letter-spacing: 0,5px;
+}
+.mainFooter a{
+    text-decoration: none;
+    outline: none;
+    color: aqua;
+    transition: 0,3s;
+}
+.mainFooter a:hover{
+    color: #ff9800;
+}
+.footerElement li{
+    
+    margin: 5px 0;
+    height: 5px;
+}
+.footerElement i{
+    margin-right: 25px;
+
+}
+.footerElementforLocation li{
+    margin: 20px 0;
+    height: 35px;
+
+}
+.footerElementforLocation i{
+    margin-right: 25px;
+
+}
+
+
+@media screen and (max-width: 700px) and (min-width: 200px) {
     .mainFooter{
         
         height: 20em;
         flex-direction: column;
-      
-
+        width: 80em;
     }
     .contentWrapper{
         margin-bottom: 20em;
     }
+    .footerElement{
+        height: 11em;
+        width: 80em;
+       
+    }
     
+
+}
+@media screen and (max-width: 630px) and (min-width: 200px){
+    .mainFooter{
+        
+        height: 20em;
+        flex-direction: column;
+        width: 39em;
+    }
+    .contentWrapper{
+        margin-bottom: 20em;
+    }
+    .footerElement{
+        height: 11em;
+        width: 39em;
+       
+    }
+
+}
+@media screen and (max-width: 400px) and (min-width: 200px){
+    .mainFooter{
+        
+        height: 20em;
+        flex-direction: column;
+        width: 30.5em;
+    }
+    .contentWrapper{
+        margin-bottom: 20em;
+    }
+    .footerElement{
+        height: 11em;
+        width: 30em;
+       
+    }
 
 }
