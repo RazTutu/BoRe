@@ -1,0 +1,39 @@
+#page {
+    display: none;
+}
+#loading {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: brown;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bookGif{
+    width: 25em;
+    height: 25em;
+}
+
+@media screen and (max-width:800px){
+    .bookGif{
+        height: 18em;
+        width: 18em;
+    }
+
+}
+
+@media screen and (max-width:350px){
+    .bookGif{
+        height: 13em;
+        width: 13em;
+    }
+
+}

@@ -5,6 +5,8 @@
         <link rel="stylesheet" type="text/css" href="assets/css/header.css">
         <link rel="stylesheet" type="text/css" href="assets/css/footer.css">
         <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/loadingScreen.css">
+        <script src="assets/js/loadingScreen.js"></script>
         <link href="fonts/fontsDropdown/css/fontawesome.css" rel="stylesheet">
         <link href="fonts/fontsDropdown/css/brands.css" rel="stylesheet">
         <link href="fonts/fontsDropdown/css/solid.css" rel="stylesheet">
@@ -12,7 +14,7 @@
         <meta name="viewport" content="width=device-width ,initial-scale=1.0"/>
     </head>
 <body>
-    <div class="contentWrapper">
+<div class="contentWrapper" id="page">
     <?php
         include('header.html');
     ?>
@@ -41,7 +43,16 @@
     </div>
 </main>
 
+
+
 </div>
+
+<!-- loading screen implemented here. Don't touch it! -->
+<div id="loading">
+    <img src="images/loading.gif" class="bookGif" alt="loading screen happy book gif">
+</div>
+
+
 <footer class="mainFooter">
         <div class="footerElement">
             <h1>BoRe</h2>
