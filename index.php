@@ -53,68 +53,9 @@
 </div>
 
 
-<footer class="mainFooter">
-        <div class="footerElement">
-            <h1>BoRe</h2>
-             <p>The more you learn the more chances you have to pass</p>
-              <div class="socialMedia">
-                <a href="">
-                    <i class="fa fa-facebook" aria-hidden="true">facabook.com/BoRe</i>
-                </a>
-                <a href="">
-                    <i class="fa fa-instagram" aria-hidden="true">instagram.com/BoRe</i>
-                </a>
-                <a href="">
-                    <i class="fa fa-twitter-square" aria-hidden="true">twiter.com/BoRe</i>
-                </a>
-            </div>
-        </div>
-        <div class="footerElement1">
-            <div class="borderStyle">
-            <h2>Quick links</h2>
-            <div class="border1"></div>
-        </div>
-            <ul>
-                <a href="">Careers<li></li></a>
-                <a href="">About us<li></li></a>
-                <a href="">Terms<li></li></a>
-                <a href="">Privacy<li></li></a>
-                <a href="">Help<li></li></a>
-            </ul>
-        </div>
-        <div class="footerElement2">
-            <h2>Work with us</h2>
-                <div class="border2"></div>
-                <ul>
-                    <a href="">Authors<li></li></a>
-                    <a href="">Advertise<li></li></a>
-                    <a href="">Books Festivals<li></li></a>
-                    <a href="">Prizes<li></li></a>
-                    <a href="">Best users<li></li></a>
-                </ul>
-        </div>
-        <div class="footerElementforLocation">
-            <h2>Contact Us</h2>
-            <div class="border3"></div>
-            <ul>
-                <li>
-                    <i class="fa fa-map-signs" aria-hidden="true">Cuza Voda Street, Iasi Country</i>
-                </li>
-                <li>
-                    <i class="fa fa-phone" aria-hidden="true">0232452963</i>
-                </li>
-                <li>
-                    <i class="fa fa-question-circle" aria-hidden="true">BoRe@info.uaic.ro</i>
-                </li>
-            </ul>
-           
-           
-        </div>
-    <div class="bootomFooter">
-        Copyright &copy; BoRe 2020
-    </div>
-
-</footer>
+<?php
+        include('footer.html');
+?>
 
 
 
