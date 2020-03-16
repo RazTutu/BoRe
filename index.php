@@ -13,36 +13,9 @@
     </head>
 <body>
     <div class="contentWrapper">
-    <header class="indexHeader">
-        <nav class="navMenu">
-        <div class = "logo">
-            <h1><a href="index.html" class="logoText">BoRe</a></h1>
-        </div>
-        
-        <div class="rightMenu">
-            <input type="checkbox" id="chk">
-            <label for="chk" class="show-menu-btn">
-                <i class="fas fa-bars"></i>
-            </label>
-            <ul class="navItems">
-                <li class="listMenu"><a href="index.html" class="menuLink">Home</a></li>
-                <li class="listMenu"><a href="#" class="menuLink">About</a></li>
-                <li class="listMenu"><a href="#" class="menuLink">Contact</a></li>
-                <label for="chk" class="hide-menu-btn">
-                    <i class="fas fa-times"></i>
-                </label>
-            </ul>
-           
-           
-        </div>
-        </nav>
-        <div class="headerMessage">
-            <div class="textHeader">
-                <h1>Your books are waiting for you</h1>
-                <p>Read. Discover. Live :)</p>
-            </div>
-        </div>
-    </header>
+    <?php
+        include('header.html');
+    ?>
 
 <main>
     <div class = "login">
