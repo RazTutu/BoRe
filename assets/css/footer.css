@@ -2,11 +2,11 @@
     display: flex;
     flex-direction: column;
 }
-.firstPart{
+.firstPartFooter{
     display: flex;
     justify-content: space-around;
 }
-.secondPart{
+.secondPartFooter{
     display: flex;
     justify-content: space-around;
 }
