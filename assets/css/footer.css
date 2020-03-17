@@ -1,362 +1,104 @@
-
-html{
-    position: relative;
-   min-height: 100%;
-}
-
-.contentWrapper{
-    margin-bottom: 25em;
-}
-
 .mainFooter{
-    
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 25em;
-    background: rgb(192, 129, 58);
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    
-    
-}
-.innerFooter{
-    width: 95%;
-    margin: auto;
-    padding: 2em 1em;
-    display: flex;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-    justify-content: center;
-
-}
-.footerElement{
-    height: 9.5em;
-    width: 25%;
-    padding: 1em 2em;
-    box-sizing: border-box;
-   
-
-}
-.footerElement1{
-    height: 9.5em;
-    width: 25%;
-    font-size: 20px;
-    margin-top: 3em;
-    text-align: justify;
-    line-height: 2em;
-    
-    
-
-}
-.footerElement2{
-    height: 9.5em;
-    width: 25%;
-    font-size: 20px;
-    margin-top: 3em;
-    text-align: justify;
-    line-height: 2em;
-}
-
-.borderStyle{
- margin-bottom: 2em;
-
-}
-.footerElementforLocation{
-    
-    height: 9.5em;
-    width: 25%;
-    padding: 1em 2em;
-    box-sizing: border-box;
-   margin-top: 3em;
-}
-.footerElement h1{
-    padding: 1em 0;
-    font-size: 25px;
-    color: rgb(222, 227, 228);
-   
-
-}
-.footerElement p{
-    color: grey;
-   
-    text-align: justify;
-    line-clamp: 25px;
-
-}
-.footerElement h2{
-    margin: 1em 0;
-    color: grey;
-    font-size: 16px;
-    font-weight:  lighter;
-  
-
-}
-.footerElementforLocation h2{
-    
-    font-size: 1.9em;
-  
-    
-   
-
-}
-.border1{
-    height: 3px;
-    width: 7em;
-    background: rgb(109, 181, 240);
-    margin-left: 3px;
-    margin-top: 1em;
-   
-
-}
-
-
-.border2{
-    height: 3px;
-    width: 9em;
-    background: rgb(109, 181, 240);
-    margin-left: 3px;
-    margin-top: 1em;
-    
-
-}
-.border3{
-    height: 3px;
-    width: 9em;
-    background: rgb(109, 181, 240);
-    margin-left: 3px;
-    margin-top: 1.4em;
-
-}
-
-.footerElement1 ul{
-    list-style: none;
-    color: seagreen;
-    font-size: 20px;
-    letter-spacing: 0.5px;
-    
-}
-.footerElement2 ul{
-    list-style: none;
-    color: seagreen;
-    font-size: 20px;
-    letter-spacing: 0.5px;
-    margin-top: 2em;
-}
-.footerElementforLocation ul{
-    list-style: none;
-    color: rgb(255, 255, 255);
-    font-size: 20px;
-    letter-spacing: 0.5px;
-    margin-top: 2.2em;
-
-}
-.footerElement1 a{
-    text-decoration: none;
-    outline: none;
-    color: aqua;
-    transition: 0.3s;
-}
-.footerElement1 a:hover{
-    color: #ffffff;
-    font-size:25px;
-}
-
-.footerElement2 a{
-    text-decoration: none;
-    outline: none;
-    color: aqua;
-    transition: 0.3s;
-}
-.footerElement2 a:hover{
-    color: #ffffff;
-    font-size:25px;
-}
-
-.footerElement li{
-    
-    margin: 5px 0;
-    height: 5px;
-}
-.footerElement i{
-    margin-right: 25px;
-
-}
-.footerElementforLocation li{
-    margin: 20px 0;
-    height: 35px;
-
-}
-.footerElementforLocation i{
-    margin-right: 25px;
-
-}
-.socialMedia{
-    width: 100%;
-    color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
-    align-items: center;
-  
-    margin-left: 3em;
- 
 }
-.socialMedia a{
-    text-decoration: none;
-    margin-right: 20em;
-
-}
-.socialMedia i{
-    height: 15px;
-    width: 15px;
-    margin: 1em 4em;
-    padding: 1em;
-    color: gainsboro;
-    border-radius: 55%;
-    border: 1px solid green;
-    transition: 0.3s;
-   
-    
-}
-.fa-facebook:before {
-    content: "\f09a";
-    margin-right: 1.9em;
-}
-.fa-instagram:before {
-    content: "\f09a";
-    margin-right: 1.8em;
-}
-.fa-twitter-square:before {
-    content: "\f09a";
-    margin-right: 1.8em;
-}
-.socialMedia i:hover{
-    background-color: rgb(118, 125, 231);
-
-}
-.bootomFooter{
-  
-    position: absolute;
-    padding: 1em;
-    background-color: #c0813a;
-    color: lightcoral;
-    font-size: 1em;
+.firstPartFooter{
     display: flex;
-    flex-flow: column-reverse;
-    align-self: flex-end;
-   
+    justify-content: space-around;
 }
-
-
-@media screen and (max-width: 1150px) {
-   
-    .contentWrapper{
-        margin-bottom: 20em;
-    }
-    
-    .socialMedia{
-        width: 100%;
-        color: rgb(0, 0, 0);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-left: 5em;
-     
-    }
-    
-    
-    .mainFooter{
-    
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 25em;
-        background: rgb(192, 129, 58);
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-        
-        
-    }
-    .footerElementforLocation ul{
-        list-style: none;
-        color: rgb(255, 255, 255);
-        font-size: 17px;
-        letter-spacing: 0.5px;
-        margin-top: 2.2em;
-    
-    }
-
+.secondPartFooter{
+    display: flex;
+    justify-content: space-around;
 }
-@media screen and (max-width: 940px) {
-    .footerElementforLocation h2 {
-        font-size: 1.5em;
-    }
-    .footerElement2 h2 {
-       
-        font-size: 1.2em;
-       
-    }
-    .footerElement1 h2 {
-      
-        font-size: 1.2em;
-        
-    }
-    .border3 {
-        
-        margin-top: 1.8em;
-    }
-    .border2
-    {
-        width: 7em;
+.footerElement{
+    height: 50px;
+    width: 50px;
+    background-color: #555;
+  }
 
+.w3-allerta {
+    font-family: "Allerta Stencil";
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* style the container */
+  .container {
+    position: relative;
+    border-radius: 5px;
+    background-color: #d1bcbc;
+    padding: 20px 0 30px 0;
+  } 
+  
+  /* style inputs and link buttons */
+  input,
+  .btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    margin: 5px 0;
+    opacity: 0.85;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none; /* remove underline from anchors */
+  }
+  
+  input:hover,
+  .btn:hover {
+    opacity: 1;
+  }
+  
+  /* add appropriate colors to fb, twitter and google buttons */
+  
+  /* style the submit button */
+  input[type=submit] {
+    background-color: #745a9c;
+    color: white;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #360a78;
+  }
+  
+  /* Two-column layout */
+  .col {
+    float: left;
+    width: 50%;
+    margin: auto;
+    padding: 0 50px;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  
+  
+  
+  /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 650px) {
+    .col {
+      width: 100%;
+      margin-top: 0;
     }
-    .border1
-    {
-        width: 6em;
-
+    /* hide the vertical line */
+    .vl {
+      display: none;
     }
-    .border3
-    {
-        width: 7em;
-
+    /* show the hidden text on small screens */
+    .hide-md-lg {
+      display: block;
+      text-align: center;
     }
-
-}
-@media screen and (max-width: 880px)
-{
-    .footerElement2 ul {
-        font-size: 15px;
-        letter-spacing: 0.5px;
-        margin-top: 1em;
+    .italic{
+        font-style: italic;
     }
-    .footerElement1 ul
-    {
-        font-size: 15px;
-        letter-spacing: 0.5px;
-        margin-top: 1em;
-    }
-    .border2 {
-        
-        margin-bottom: 1.8em;
-    }
-    .footerElementforLocation ul {
-      
-       
-        font-size: 15px;
-        
-    }
-    .socialMedia i {
-        height: 10px;
-        width: 10px;
-        
-    }
-    .socialMedia fa {
-        
-        font-size: 10px;
-    }
-
-}
+  }

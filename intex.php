@@ -12,14 +12,37 @@
         <link href="fonts/fontsDropdown/css/solid.css" rel="stylesheet">
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width ,initial-scale=1.0"/>
+        <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .body {
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+      }
+      .content {
+        flex-grow: 1;
+        flex-basis: auto;
+      }
+      .footer {
+      }
+    </style>
     </head>
 <body>
-<div class="contentWrapper" id="page">
+ 
+    <header class="header">
+
     <?php
         include('header.html');
     ?>
 
-<main>
+    </header>
+    <main class="content">
     <div class = "login">
         <form class="login-class">
             <ul class="listForLogin">
@@ -41,22 +64,13 @@
             </ul>
         </form>
     </div>
+
 </main>
-
-
-
-</div>
-
-<!-- loading screen implemented here. Don't touch it! -->
-<div id="loading">
-    <img src="images/loading.gif" class="bookGif" alt="loading screen happy book gif">
-</div>
-
-
+    <footer class="footer">
 <?php
         include('footer.html');
 ?>
-
+    </footer>
 
 
 </body>
