@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="assets/css/loadingScreen.css">
-       
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="fonts/fontsDropdown/css/fontawesome.css" rel="stylesheet">
         <link href="fonts/fontsDropdown/css/brands.css" rel="stylesheet">
         <link href="fonts/fontsDropdown/css/solid.css" rel="stylesheet">
