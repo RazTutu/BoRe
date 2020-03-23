@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="assets/css/header.css">
         <link rel="stylesheet" type="text/css" href="assets/css/footer.css">
         <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/popUps.css">
         <script src="assets/js/loadingScreen.js"></script>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
@@ -29,7 +30,7 @@
     ?>
 
     </header>
-    <main class="content">
+    <main class="content" id="page">
 
     
     <section  class="orizontalSection">
@@ -37,25 +38,11 @@
           <img src="https://picsum.photos/1700/200" class= "info">    
         </div>
         <div>
-            <form class="login-class">
-                <ul class="nodotlist">
-                    <li class = "loginElement">
-                        <input type="text" name="emailOrUsername" id="loginbox" placeholder="Username or Email">
-                    </li>
-                    <li class = "loginElement">
-                        <input type="password" name="Password" id="loginbox" placeholder="Password">
-                    </li>
-                    <li class = "loginElement">
-                        <button type="Sign in" id="buttonlogin">Login</button>
-                    </li>
-                    <p class = "loginElement" id = "writinglogin">
-                        Not registered? Click here:
-                    </p>
-                    <li class = "loginElement">
-                        <button type="submit" id="buttonlogin">Register</button>
-                    </li>
-                </ul>
-            </form>
+            <button type="text" id="popup-login">Login</button>   
+            <p class = "loginElement" id = "writinglogin">
+            Not registered? Click here:
+            </p>       
+            <button type="text" id="popup-register">Register</button>
         </div>
     </section>
 
@@ -123,15 +110,18 @@
 </main>
 
 
-
-
     <footer class="mainFooter ">
 <?php
         include('footer.html');
 ?>
     </footer>
 
+<?php
+        include('popUps.html');
+?>
+
+<div id="loading">
+    <img src="images/loading.gif" class="bookGif" alt="loading screen happy book gif">
+    </div>
 </body>
-
-
 </html>

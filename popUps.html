@@ -1,0 +1,63 @@
+<div class="popup-login">
+    <div class="popup-content">
+        <img src="https://img.icons8.com/carbon-copy/100/000000/close-window.png" class="closeLogin"/>
+        <img src="./images/loading.gif" class="imge"/>
+        <form>
+            <input type="text" placeholder="Username" class="inputLoginForm">
+            <input type="text" placeholder="Password" class="inputLoginForm">
+            <button type="submit" class="loginFormButton">
+                <span>
+                    Login
+                </span>    
+            </button>
+            
+        </form>
+    </div>
+</div>
+
+<div class="popup-register">
+    <div class="popup-content-register">
+        <img src="https://img.icons8.com/carbon-copy/100/000000/close-window.png" class="closeRegister"/>
+        <img src="./images/loading.gif" class="imge"/>
+        <form>
+            <input type="text" placeholder="Email" class="inputLoginForm">
+            <input type="text" placeholder="Username" class="inputLoginForm">
+            <input type="text" placeholder="Password" class="inputLoginForm">
+            <button type="submit" class="loginFormButton">
+                <span>
+                    Register 
+                </span>    
+            </button>
+            
+        </form>
+    </div>
+</div>
+
+
+
+
+<script>
+    document.getElementById("popup-login").addEventListener("click",function(){
+        document.querySelector(".popup-login").style.display = "flex";
+    })
+
+    document.querySelector(".closeLogin").addEventListener("click", function(){
+        document.querySelector(".popup-login").style.display = "none";
+    })
+</script>
+
+<script>
+    document.getElementById("popup-register").addEventListener("click",function(){
+        document.querySelector(".popup-register").style.display = "flex";
+    })
+
+    document.querySelector(".closeRegister").addEventListener("click", function(){
+        document.querySelector(".popup-register").style.display = "none";
+    })
+</script>
+
+<script>
+    document.getElementById("popup-register2").addEventListener("click",function(){
+        document.querySelector(".popup-register").style.display = "flex";
+    })
+</script>

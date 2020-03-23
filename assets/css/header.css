@@ -4,7 +4,7 @@
   }
 
 .indexHeader{
-    height: 18em;
+    height: 30em;
     background-image: url("../../images/mainCover.jpg");
     background-size: cover;
 	background-repeat: no-repeat;
@@ -97,6 +97,10 @@
     z-index: -1111;
   }
 
+  div.mobileMessage{
+    display: none;
+  }
+
   @media screen and (max-width:800px) {
     .show-menu-btn,.hide-menu-btn{
         display: block;
@@ -144,4 +148,15 @@
         color: black;
       }
 
+  }
+
+  @media screen and (max-width:530px) {
+    div.mobileMessage{
+      display: inline-block;
+      color: white;
+    }
+
+    .textHeader{
+      display: none;
+    }
   }
