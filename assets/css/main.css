@@ -146,13 +146,18 @@
 
   }
 
+.orizontalSection{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .login-class{
   display: flex;
-  flex-flow: row wrap;
   justify-content: flex-end;
 }
 
-.listForLogin{
+.nodotlist{
   list-style-type: none;
 }
 
@@ -161,5 +166,58 @@
   margin: 0.25em;
   flex-flow: column wrap;
   justify-content: space-around;
-  align-items: flex-start;
+  /*align-items: flex-start;*/
+}
+
+#loginbox{
+  height: 2.5em;
+}
+
+#buttonlogin{
+  height: 2.5em;
+}
+
+#writinglogin{
+  font-size: 1.3em;
+}
+
+.quotes{
+  display: flex;
+  flex-flow: row;
+}
+
+#personalityPortret{
+  margin-right: 1em;
+  margin-left: 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 3em;
+}
+
+#quotewrt{
+  margin-right: 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.statistics{
+  height: 14em;
+  width: 14em;
+  border: 2px solid red;
+  border-radius: 50%;
+  background-color: red;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+
+.updates{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.update__comp{
+  /*border: 2px solid red;*/
+  margin: 2em;
 }
