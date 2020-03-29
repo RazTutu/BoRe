@@ -31,7 +31,7 @@
 
     </header>
 
-    <main id="page">
+    <main class="content">
         <p>About page</p>
     </main>
 
@@ -46,9 +46,7 @@
 ?>
 
 
-<div id="loading">
-    <img src="images/loading.gif" class="bookGif" alt="loading screen happy book gif">
-    </div>
+
 
 </body>
 </html>

@@ -68,7 +68,12 @@ body {
 .link-words {
   font-size: 1em;
 }
-
+.links-elements {
+  color: white;
+}
+a {
+  text-decoration: none;
+}
 .button-register span {
   cursor: pointer;
   display: inline-block;
@@ -160,7 +165,6 @@ input[type="submit"]:hover {
 }
 .col-for-social-media {
   float: left;
-
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -172,21 +176,32 @@ input[type="submit"]:hover {
   clear: both;
 }
 .fb {
-  background-color: #3b5998;
+  background-color: #4e6491;
   color: white;
+}
+.fb:hover {
+  background-color: #55acee;
 }
 
 .twitter {
-  background-color: #55acee;
+  background-color: #4e6491;
   color: white;
 }
-
+.twitter:hover {
+  background-color: #55acee;
+}
 .google {
-  background-color: #dd4b39;
+  background-color: #e46757;
   color: white;
+}
+.google:hover {
+  background-color: #d14735;
 }
 .list-unstyled {
   text-decoration: none;
+  text-align: center;
+  color: white;
+  list-style-type: none;
 }
 @media screen and (max-width: 933px) {
   .button-register {
@@ -218,17 +233,18 @@ input[type="submit"]:hover {
 }
 @media screen and (max-width: 380px) {
   .button-register {
-    font-size: 0.5em;
+    font-size: 0.8em;
   }
   input[name="emailAdress"],
   .btn {
-    font-size: 0.5em;
+    font-size: 0.8em;
   }
   input[type="submit"] {
-    font-size: 0.46em;
+    font-size: 0.76em;
   }
   .button {
     margin: 0 1.3em;
+    padding: 0.8em;
   }
   .col {
     width: 80%;
