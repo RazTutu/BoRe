@@ -32,13 +32,19 @@
 
     
     <section  class="orizontalSection">
-        <div>      
+        <div class = "loginElement">      
           <img src="https://picsum.photos/1700/200" class= "info">    
         </div>
-        <div>
+        <div class = "loginElement">
+            <p id = "login__title">
+                Welcome Back
+            </p>
+            <p id = "login__message">
+                Don't miss your next best read. Sign in to stay updated.
+            </p>
             <button type="text" id="popup-login">Login</button>   
-            <p class = "loginElement" id = "writinglogin">
-            Not registered? Click here:
+            <p id = "login__register_message">
+                Not registered? Click here:
             </p>       
             <button type="text" id="popup-register">Register</button>
         </div>
