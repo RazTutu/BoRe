@@ -33,9 +33,9 @@
     
     <section  class="orizontalSection">
         <div class = "loginElement">      
-          <img src="https://picsum.photos/1700/200" class= "info">    
+        <img src="https://picsum.photos/1700/200" class= "info">    
         </div>
-        <div class = "loginElement">
+        <div class = "loginElement" id = "loginSection">
             <p id = "login__title">
                 Welcome Back
             </p>
@@ -73,6 +73,11 @@
         <img src="https://picsum.photos/200/200" class= "info">
         <img src="https://picsum.photos/200/200" class= "info">
         <img src="https://picsum.photos/200/200" class= "info">
+        <img src="https://picsum.photos/200/200" class= "info">
+        <img src="https://picsum.photos/200/200" class= "info">
+        <img src="https://picsum.photos/200/200" class= "info">
+        <img src="https://picsum.photos/200/200" class= "info">
+        
     </section>
 
 

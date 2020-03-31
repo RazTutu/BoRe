@@ -257,3 +257,14 @@
 #login__register-message{
   font-weight: lighter;
 }
+
+#loginSection{
+  display: flex;
+  align-self: end;
+  box-shadow: 5px 10px rgb(231, 192, 143)ack;
+  background-image: url("../../images/loginImage2.jfif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  align-items: center;
+}
