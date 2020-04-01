@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="assets/css/footer.css">
         <link rel="stylesheet" type="text/css" href="assets/css/main.css">
         <link rel="stylesheet" type="text/css" href="assets/css/popUps.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/about-body.css">
         <script src="assets/js/loadingScreen.js"></script>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
@@ -32,7 +33,11 @@
     </header>
 
     <main class="content">
-        <p>About page</p>
+    
+<?php
+        include('body-about.html');
+?>
+  
     </main>
 
     <footer class="mainFooter ">

@@ -1,0 +1,241 @@
+.all-content-body {
+  display: flex;
+  flex-direction: column;
+}
+.body-first-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.body-secont-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.body-third-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.first-photo-and-quote {
+  display: flex;
+  flex-direction: column;
+}
+.second-photo-and-quote {
+  display: flex;
+  flex-direction: column;
+}
+.third-photo-and-quote {
+  display: flex;
+  flex-direction: column;
+
+  align-self: center;
+}
+.photo-for-first-part {
+  border-radius: 8px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.nature-text {
+  font-family: "Inder", sans-serif;
+  line-height: 1.5em;
+  margin-bottom: 1em;
+  color: #666;
+}
+.title-nature {
+  color: #ff4411;
+  font-size: 3em;
+  font-family: "Signika", sans-serif;
+  padding-bottom: 10px;
+  -webkit-text-stroke: thin;
+}
+.text-for-first-part {
+  width: 35%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+.place-holder-img {
+  width: 30%;
+}
+.text-for-second-part {
+  width: 40%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+.body-third-part .fa {
+  padding: 1.2em;
+  font-size: 1.2em;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+.body-third-part .fa:hover {
+  background: #037ab1;
+}
+.fa-linkedin {
+  background: #3d8baf;
+  color: white;
+}
+.razvan-quote {
+  font-family: "Inder", sans-serif;
+  line-height: 1.5em;
+  margin-bottom: 1em;
+  color: #666;
+  width: 50%;
+  text-align: center;
+}
+.photo-razvan {
+  border-radius: 50%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.andrei-quote {
+  font-family: "Inder", sans-serif;
+  line-height: 1.5em;
+  margin-bottom: 1em;
+  color: #666;
+  width: 80%;
+  text-align: center;
+}
+.photo-andrei {
+  border-radius: 50%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.photo-radu {
+  border-radius: 50%;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+.radu-quote {
+  font-family: "Inder", sans-serif;
+  line-height: 1.5em;
+  margin-bottom: 1em;
+  color: #666;
+  width: 50%;
+  text-align: center;
+}
+.first-photo {
+  align-self: center;
+}
+.first-linkedin {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.profile {
+  align-self: center;
+}
+.text-link {
+  display: flex;
+  align-self: center;
+}
+.first-quote {
+  display: flex;
+  justify-content: center;
+}
+.third-photo {
+  display: flex;
+  justify-content: center;
+}
+.second-photo {
+  display: flex;
+  justify-content: center;
+}
+.second-linkedin {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.second-quote {
+  display: flex;
+  justify-content: center;
+}
+.third-linkedin {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+.third-quote {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1340px) {
+  .body-first-part {
+    justify-content: space-evenly;
+  }
+  .place-holder-img {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 1220px) {
+  .photo-for-first-part {
+    height: 22em;
+    width: 28em;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .photo-for-first-part {
+    height: 18em;
+    width: 24em;
+  }
+  .title-nature {
+    font-size: 2em;
+  }
+  .photo-razvan {
+    width: 10em;
+  }
+  .photo-andrei {
+    width: 10em;
+  }
+  .photo-radu {
+    width: 10em;
+  }
+}
+@media screen and (max-width: 767px) {
+  .body-first-part {
+    flex-direction: column;
+    align-items: center;
+  }
+  .body-secont-part {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .body-third-part {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 767px) {
+  .text-for-first-part {
+    width: 75%;
+  }
+  .text-for-second-part {
+    width: 75%;
+  }
+  .place-holder-img {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .photo-for-first-part {
+    height: 24em;
+    width: 28em;
+  }
+}
+@media screen and (max-width: 500px) {
+  .text-for-first-part {
+    width: 80%;
+  }
+  .photo-for-first-part {
+    height: 14em;
+    width: 20em;
+  }
+  .place-holder-img {
+    width: 80%;
+  }
+}
