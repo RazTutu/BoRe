@@ -1,3 +1,4 @@
+<?php include('./backend/server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -126,7 +127,7 @@
     </footer>
 
 <?php
-        include('popUps.html');
+        include('popUps.php');
 ?>
 
 <div id="loading">

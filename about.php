@@ -47,7 +47,7 @@
     </footer>
 
 <?php
-        include('popUps.html');
+        include('popUps.php');
 ?>
 
 

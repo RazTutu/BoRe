@@ -2,10 +2,11 @@
     <div class="popup-content">
         <img src="https://img.icons8.com/carbon-copy/100/000000/close-window.png" class="closeLogin"/>
         <img src="./images/loading.gif" class="imge"/>
-        <form>
-            <input type="text" placeholder="Username" class="inputLoginForm">
-            <input type="text" placeholder="Password" class="inputLoginForm">
-            <button type="submit" class="loginFormButton">
+        <form action ="index.php?logout='1'" method="POST">
+            <?php include('./backend/errors.php'); ?> 
+            <input type="text" placeholder="Username" class="inputLoginForm" name="username">
+            <input type="password" placeholder="Password" class="inputLoginForm" name="password">
+            <button type="submit" class="loginFormButton" name="login_user">
                 <span>
                     Login
                 </span>    
@@ -19,11 +20,13 @@
     <div class="popup-content-register">
         <img src="https://img.icons8.com/carbon-copy/100/000000/close-window.png" class="closeRegister"/>
         <img src="./images/loading.gif" class="imge"/>
-        <form>
-            <input type="text" placeholder="Email" class="inputLoginForm">
-            <input type="text" placeholder="Username" class="inputLoginForm">
-            <input type="text" placeholder="Password" class="inputLoginForm">
-            <button type="submit" class="loginFormButton">
+        <form action="index.php?logout='1'" method="POST">
+            <?php include('./backend/errors.php'); ?> 
+            <input type="email" placeholder="Email" class="inputLoginForm" name="email">
+            <input type="text" placeholder="Username" class="inputLoginForm" name="username">
+            <input type="password" placeholder="Password" class="inputLoginForm" name="password_1">
+            <input type="password" placeholder="Confirm Password" class="inputLoginForm" name="password_2">
+            <button type="submit" class="loginFormButton" name="reg_user">
                 <span>
                     Register 
                 </span>    
