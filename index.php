@@ -44,11 +44,11 @@
             <p id = "login__message">
                 Don't miss your next best read. Sign in to stay updated.
             </p>
-            <button type="text" id="popup-login">Login</button>   
+            <button type="button" id="popup-login">Login</button>   
             <p id = "login__register_message">
                 Not registered? Click here:
             </p>       
-            <button type="text" id="popup-register">Register</button>
+            <button type="button" id="popup-register">Register</button>
         </div>
     </section>
 
@@ -89,12 +89,12 @@
             <img src="https://picsum.photos/100/100" id="personalityPortret">
             <ul class = "nodotlist">
                 <li>
-                    <p id="quotewrt">
+                    <p class="quotewrt">
                     “In three words I can sum up everything I've learned about life: it goes on.”
                     </p>
                 </li>
                 <li>
-                    <p id="quotewrt">Robert Frost</p>
+                    <p class="quotewrt">Robert Frost</p>
                 </li>
             </ul>
 
