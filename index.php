@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>BoRe</title>
+        <title>BookReviewer</title>
+        <link rel="shortcut icon" type="image/png" href="./images/favicon_browser.png"/>
         <link rel="stylesheet" type="text/css" href="assets/css/header.css">
         <link rel="stylesheet" type="text/css" href="assets/css/footer.css">
         <link rel="stylesheet" type="text/css" href="assets/css/main.css">

@@ -3,14 +3,6 @@
     padding: 0;
   }
 
-.indexHeader{
-    height: 18em;
-    background-image: url("../../images/mainCover.jpg");
-    background-size: cover;
-	background-repeat: no-repeat;
-    position: relative;
-    
-}
 
 .navMenu{
     width: 100%;
