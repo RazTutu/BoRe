@@ -138,27 +138,19 @@
 
   }
 
+.mainLayout{
+  margin-left: 5em;
+  margin-right: 5em;
+}
+
 .orizontalSection{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.login-class{
-  display: flex;
-  justify-content: flex-end;
-}
-
 .nodotlist{
   list-style-type: none;
-}
-
-#loginbox{
-  height: 2.5em;
-}
-
-#buttonlogin{
-  height: 2.5em;
 }
 
 .quotes{
@@ -211,52 +203,123 @@
   display: flex;
   margin: 0.25em;
   flex-direction: column;
-  align-items: center;
 }
 
 #popup-login{
   font-size: 1em;
-  padding: 1em 1em;
-  border-radius: 20%;
+  padding: 0.5em 2em;
+  border-radius: 5%;
   transition-duration: 0.4s;
+  background-color: white;
+  color: black;
+  border: 2px solid #555555
 }
 
 #popup-login:hover{
-  background-color: rgb(231, 192, 143);
+  background-color: #555555;
   color: white;
 }
 
 #popup-register{
   font-size: 1em;
-  padding: 1em 1em;
-  border-radius: 20%;
+  padding: 0.5em 2em;
+  border-radius: 5%;
   transition-duration: 0.4s;
+  background-color: white;
+  color: black;
+  border: 2px solid #555555
 }
 
 #popup-register:hover{
-  background-color: rgb(231, 192, 143);
+  background-color: #555555;
   color: white;
 }
 
-#login__title{
+#segment__title{
   font-weight: bold;
 }
 
-#login__message{
+#segment__message{
   text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
-#login__register-message{
-  font-weight: lighter;
-}
 
 #loginSection{
   display: flex;
+  margin: 1em;
   align-self: end;
   box-shadow: 5px 10px rgb(231, 192, 143)ack;
-  background-image: url("../../images/loginImage2.jfif");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: right;
   align-items: center;
+}
+
+.greetingMessage{
+  text-indent: 1em;
+  margin: auto;
+}
+
+.greetingMessageTitle{
+  font-weight: bold;
+  font-size: large;
+  text-indent: 2em;
+  margin: auto;
+}
+
+.indentedText{
+  text-indent: 2em;
+}
+
+.greetingMessagequote{
+  font-style: oblique;
+  text-indent: 2em;
+  margin: auto;
+}
+
+.contain {
+  width: 100%;
+  height: auto;
+}
+
+.row {
+  overflow: scroll;
+  width: 100%;
+  height: auto;
+}
+
+.row__inner {
+  transition: 450ms transform;
+  font-size: 0;
+  white-space: nowrap;
+}
+
+.tile {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  height: 400px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: 450ms all;
+  transform-origin: top left;
+}
+.tile__img {
+  height: 250px;
+  width: auto;
+  object-fit: cover;
+}
+.row__inner:hover {
+  transform: translate3d(0, 0, -62.5px);
+}
+.row__inner:hover .tile {
+  opacity: 0.3;
+}
+.row__inner:hover .tile:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.verticalSection{
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
