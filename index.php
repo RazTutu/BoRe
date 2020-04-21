@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width ,initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="assets/css/top_five_books.css">
         <style>
      
     </style>
@@ -32,6 +33,31 @@
     </header>
     <main class="content" id="page">
 
+    <?php
+    //code used to get the last 5 images inserted in the database
+    $db = mysqli_connect('eu-cdbr-west-02.cleardb.net', 'bb805e9a46b13e', '5b8a2c50', 'heroku_18acf4529517193', '3306');
+    $sql = "SELECT * FROM book_reviews order by book_id desc";
+    $result = mysqli_query($db, $sql);
+    $i = 5;
+    //explanation: at every iteration we extract the image and the text from the db
+    //and we fill a div with the id img_div with it
+    echo "<div class='top_five_parent'>";
+    while($row = mysqli_fetch_array($result)){
+        echo "<div id='top_five_layout'>";
+            echo "<img class='top_five_image' src='reviewedImages/".$row['book_image']."'>";
+            echo "<p>".$row['book_name']."</p>";
+            echo "<p>".$row['book_author']."</p>";
+            echo "<p>".$row['book_genre']."</p>";
+            //echo "<p>".$row['book_review']."</p>"; //with this line you can get even the book review
+            //but don't show it because it may be too long.
+        echo "</div>";
+    $i-=1;
+    if($i == 0){
+        break;
+    }
+    }
+    echo "</div>"; //end of the top_five_parent div
+?>
 
     <section class = "mainLayout">
 

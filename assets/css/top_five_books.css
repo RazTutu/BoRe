@@ -1,0 +1,16 @@
+#top_five_layout{
+    height: 14em;
+    width: 13em;
+    border: 0.5px solid black;
+}
+
+.top_five_image{
+    height: 8em;
+    width: 8em;
+}
+
+.top_five_parent{
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+}

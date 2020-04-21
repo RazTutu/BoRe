@@ -5,62 +5,55 @@ session_start();
 // User will be headed to 'login.php' 
 // after loggin out 
 
+//this thing works perfectly if you enter the website without being logged in. I could make an error page with that
 if (!isset($_SESSION['username'])) { 
     $_SESSION['msg'] = "You have to log in first"; 
     //header('location: ../index.php'); 
     echo $_SESSION['msg'];
 }
 
+//this also works. it's called when i press the logout button
 if (isset($_GET['logout'])) { 
     session_destroy(); 
     unset($_SESSION['username']); 
-    header("location: ../index.php"); 
+    echo "YOU WILL BE LOGGED OUT IN 3 SECONDS";
+    
+    sleep(3);
+    //header('location: ../index.php'); 
 } 
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="../images/favicon_browser.png"/>
-    <title>BookReviewer</title>
+    <title>Document</title>
 </head>
 <body>
-
-<?php if (isset($_SESSION['success'])) : ?> 
-            <div class="error success" > 
-                <h3> 
-                    <?php
-                        echo $_SESSION['success'];  
-                        unset($_SESSION['success']); 
-                    ?> 
-                </h3> 
-            </div> 
-        <?php endif ?> 
 
 
     <!-- information of the user logged in -->
         <!-- welcome message for the logged in user -->
         <?php  if (isset($_SESSION['username'])) : ?> 
-            <?php //the page will be included inside this if ?>
-            <p> Welcome  
+            <p> 
+                Hei hei hei 
                 <strong> 
                     <?php echo $_SESSION['username']; ?> 
                 </strong> 
             </p> 
+            <p>  
+                <a href="#" style="color: red;"> 
+                    Click here to Logout 
+                </a> 
+            </p> 
            
-
             <form method="GET">
             <button name="logout">logout here</button>
             </form>
-
-
-
-
+        <?php else : ?>
+        <p></p>
          <?php endif ?>
-        <!-- <a href="reviewedImages.php">Go to reviewedImages</a> -->
-        <!-- Include the addReviews page -->
-        <?php include 'reviewedImages.php';?>
+        
 </body>
 </html>
