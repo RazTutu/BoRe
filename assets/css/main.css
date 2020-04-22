@@ -144,7 +144,24 @@
   margin-right: 5em;
 }
 
-.orizontalSection{
+
+@media screen and (min-width: 675px){
+  .horizontalSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 675px){
+  .horizontalSection{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+  }
+}
+
+.horizontalSection_statistics{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -154,23 +171,17 @@
   list-style-type: none;
 }
 
+
 .quotes{
   display: flex;
   flex-flow: row;
-}
-
-#personalityPortret{
-  margin-right: 1em;
-  margin-left: 1.5em;
-  margin-top: 1.5em;
-  margin-bottom: 3em;
 }
 
 #quotewrt{
   margin-right: 1.5em;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
-}
+} 
 
 .statistics{
   height: 14em;
@@ -325,3 +336,7 @@
   margin-bottom: 2em;
 }
 
+.middlePoz{
+  display: flex;
+  justify-content: center;
+}

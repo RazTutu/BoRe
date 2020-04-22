@@ -1,16 +1,35 @@
 #top_five_layout{
-    height: 14em;
-    width: 13em;
-    border: 0.5px solid black;
+    height: 20em;
+    width: 10%;
 }
 
 .top_five_image{
-    height: 8em;
-    width: 8em;
+    height: 13em;
+    width: 10em;
 }
 
 .top_five_parent{
     margin-top: 2em;
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
+    align-content: space-between;
+}
+
+
+@media screen and (min-width: 1000px) and (max-width: 1300px) {
+    #top_five_layout {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #top_five_layout {
+        width: 33%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #top_five_layout {
+        width: 50%;
+    }
 }
