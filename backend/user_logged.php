@@ -56,11 +56,11 @@ if (isset($_GET['logout'])) {
             </form>
 
 
-
-
-         <?php endif ?>
         <!-- <a href="reviewedImages.php">Go to reviewedImages</a> -->
         <!-- Include the addReviews page -->
         <?php include 'reviewedImages.php';?>
+
+         <?php endif ?>
+        
 </body>
 </html>
