@@ -161,6 +161,14 @@
   }
 }
 
+@media screen and (max-width: 400px){
+  .mainLayout{
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+}
+
+
 .horizontalSection_statistics{
   display: flex;
   flex-direction: row;

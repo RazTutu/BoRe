@@ -1,0 +1,33 @@
+/* css for the contact page */
+
+.formMessage{
+    text-indent: 6vw;
+}
+
+.contactLabel{
+    text-indent: 3vw;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.contactForm{
+    display: flex;
+    flex-direction: column;
+    margin: 1vw;
+}
+
+.submitContactButton{
+    height: 5em;
+    width: 10em;
+}
+
+.contactInput{
+    width: 30vw;
+}
+
+.contactCommentLabel{
+    width: 60vw;
+    height: 10vw;
+}
