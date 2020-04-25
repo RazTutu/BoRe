@@ -59,8 +59,9 @@ if (isset($_GET['logout'])) {
         <!-- <a href="reviewedImages.php">Go to reviewedImages</a> -->
         <!-- Include the addReviews page -->
         <?php include 'reviewedImages.php';?>
+        
 
-         <?php endif ?>
+        <?php endif ?>
         
 </body>
 </html>

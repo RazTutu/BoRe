@@ -1,0 +1,88 @@
+#content{
+    width: 50%;
+    margin: auto;
+    border: 1px solid #cbcbcb;
+}
+.add_review_form{
+    width: 50%;
+    margin:auto;
+}
+
+.form_errors{
+    height: 7em;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+.input_field{
+    height: 30px;
+    width: 100%;
+    font-size: 14pt;
+    margin-top: 1em;
+    border: 1px solid black;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.header_message{
+    font-family: 'Roboto', sans-serif;
+}
+
+.input_field:focus{
+    outline-width: 0;
+    width: 103%;
+    transition: 0.5s;
+}
+
+.add_review_form{
+    text-align: center;
+}
+
+.review_zone_label{
+    font-size: 2em;
+    font-family: 'Roboto', sans-serif;
+}
+
+.review_input{
+    margin-top: 20px;
+}
+
+.review_zone_text{
+    width: 100%;
+}
+
+.review_zone_text:focus{
+    outline-width: 0;
+}
+
+.upload_review_button{
+    margin-top: 2em;
+}
+
+.button_style{
+    background-color: white;
+    border: 2px solid #555555;
+    padding: 0.7em 2em;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button_style:hover{
+    background-color: #555555;
+    color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    #content{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .add_review_form{
+        width: 80%;
+    }
+  }
+
+
