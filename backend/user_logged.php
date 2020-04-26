@@ -17,6 +17,16 @@ if (isset($_GET['logout'])) {
     header("location: ../index.php"); 
 } 
 
+//save admin checker value inside is_admin session variable
+$dbh = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
+$sth = $dbh->prepare("SELECT is_admin from users WHERE username="."'".$_SESSION['username']."'".";");
+$sth->execute();
+$is_admin = $sth->fetchColumn();
+if($is_admin != 1){
+    $is_admin = 0;
+}
+$_SESSION['is_admin'] = $is_admin;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,7 +69,8 @@ if (isset($_GET['logout'])) {
         <!-- <a href="reviewedImages.php">Go to reviewedImages</a> -->
         <!-- Include the addReviews page -->
         <?php include 'reviewedImages.php';?>
-        
+        <?php //the php variable that checks if user is admin is $_SESSION['is_admin']; ?>
+        <?php include 'admin.php';?>
 
         <?php endif ?>
         
