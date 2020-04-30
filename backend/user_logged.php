@@ -5,24 +5,24 @@ session_start();
 // User will be headed to 'login.php' 
 // after loggin out 
 
-if (!isset($_SESSION['username'])) { 
-    $_SESSION['msg'] = "You have to log in first"; 
+if (!isset($_SESSION['username'])) {
+    $_SESSION['msg'] = "You have to log in first";
     //header('location: ../index.php'); 
     echo $_SESSION['msg'];
 }
 
-if (isset($_GET['logout'])) { 
-    session_destroy(); 
-    unset($_SESSION['username']); 
-    header("location: ../index.php"); 
-} 
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: ../index.php");
+}
 
 //save admin checker value inside is_admin session variable
 $dbh = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
-$sth = $dbh->prepare("SELECT is_admin from users WHERE username="."'".$_SESSION['username']."'".";");
+$sth = $dbh->prepare("SELECT is_admin from users WHERE username=" . "'" . $_SESSION['username'] . "'" . ";");
 $sth->execute();
 $is_admin = $sth->fetchColumn();
-if($is_admin != 1){
+if ($is_admin != 1) {
     $is_admin = 0;
 }
 $_SESSION['is_admin'] = $is_admin;
@@ -30,49 +30,36 @@ $_SESSION['is_admin'] = $is_admin;
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="../images/favicon_browser.png"/>
+    <link rel="shortcut icon" type="image/png" href="../images/favicon_browser.png" />
     <title>BookReviewer</title>
 </head>
+
 <body>
 
-<?php if (isset($_SESSION['success'])) : ?> 
-            <div class="error success" > 
-                <h3> 
-                    <?php
-                        echo $_SESSION['success'];  
-                        unset($_SESSION['success']); 
-                    ?> 
-                </h3> 
-            </div> 
-        <?php endif ?> 
+    <?php if (isset($_SESSION['success'])) : ?>
+
+        <?php
+        unset($_SESSION['success']);
+        ?>
+
+    <?php endif ?>
 
 
     <!-- information of the user logged in -->
-        <!-- welcome message for the logged in user -->
-        <?php  if (isset($_SESSION['username'])) : ?> 
-            <?php //the page will be included inside this if ?>
-            <p> Welcome  
-                <strong> 
-                    <?php echo $_SESSION['username']; ?> 
-                </strong> 
-            </p> 
-           
+    <!-- welcome message for the logged in user -->
+    <?php if (isset($_SESSION['username'])) : ?>
 
-            <form method="GET">
-            <button name="logout">logout here</button>
-            </form>
-
+        <?php include 'index.php'; ?>
 
         <!-- <a href="reviewedImages.php">Go to reviewedImages</a> -->
         <!-- Include the addReviews page -->
-        <?php include 'reviewedImages.php';?>
-        <?php //the php variable that checks if user is admin is $_SESSION['is_admin']; ?>
-        <?php include 'admin.php';?>
 
-        <?php endif ?>
-        
+    <?php endif ?>
+
 </body>
+
 </html>
