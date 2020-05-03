@@ -7,7 +7,7 @@ if(isset($_POST['upload'])){
     //All the form errors(empty fields for example) will be stored inside errors array
     $errors = array(); 
     //connect to the db
-    $db = mysqli_connect('eu-cdbr-west-02.cleardb.net', 'bb805e9a46b13e', '5b8a2c50', 'heroku_18acf4529517193', '3306');
+    $db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
     //get the subbmited data
     $image = $_FILES['image']['name'];
     $text = $_POST['text'];
@@ -24,8 +24,9 @@ if(isset($_POST['upload'])){
     if (empty($image)) { array_push($errors, "You forgot to upload an image."); } 
 
     if (count($errors) == 0) { 
-    $sql = "INSERT INTO book_reviews(username, book_name, book_author, book_genre, book_review, book_image) values ('$username', '$book_name', '$book_author', '$book_genre', '$text', '$image')";
-    mysqli_query($db, $sql);
+    //execute sql statement
+    $sth = $db->prepare("INSERT INTO book_reviews(username, book_name, book_author, book_genre, book_review, book_image) values ('$username', '$book_name', '$book_author', '$book_genre', '$text', '$image')");
+    $sth->execute();
     //now save the local file
     if(move_uploaded_file($_FILES['image']['tmp_name'], $target)){
         $msg = "Image uploaded successfully";
@@ -57,7 +58,6 @@ if(isset($_POST['upload'])){
 
     <div id="content">
         <form method="post" enctype="multipart/form-data" class="add_review_form">
-
             <?php
                 //$db = mysqli_connect('eu-cdbr-west-02.cleardb.net', 'bb805e9a46b13e', '5b8a2c50', 'heroku_18acf4529517193', '3306');
                 $dbh = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
