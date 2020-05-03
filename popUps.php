@@ -1,6 +1,6 @@
 <div class="popup-login">
     <div class="popup-content">
-        <img src="https://img.icons8.com/carbon-copy/100/000000/close-window.png" class="closeLogin"/>
+        <img src="https://img.icons8.com/carbon-copy/100/000000/close-window.png" alt="close login form" class="closeLogin"/>
         <img src="./images/loading.gif" class="imge" alt="gif happy book"/>
         <form action ="index.php?logout='1'" method="POST">
             <?php include('./backend/errors.php'); ?> 
@@ -18,7 +18,7 @@
 
 <div class="popup-register">
     <div class="popup-content-register">
-        <img src="https://img.icons8.com/carbon-copy/100/000000/close-window.png" class="closeRegister"/>
+        <img src="https://img.icons8.com/carbon-copy/100/000000/close-window.png" alt="close register form" class="closeRegister"/>
         <img src="./images/loading.gif" class="imge" alt="gif happy book"/>
         <form action="index.php?logout='1'" method="POST">
             <?php include('./backend/errors.php'); ?> 

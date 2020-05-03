@@ -10,7 +10,7 @@ if (isset($_POST['upload'])) {
     //All the form errors(empty fields for example) will be stored inside errors array
     $errors = array();
     //connect to the db
-    $db = mysqli_connect('eu-cdbr-west-02.cleardb.net', 'bb805e9a46b13e', '5b8a2c50', 'heroku_18acf4529517193', '3306');
+    $db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
     //get the subbmited data
     $image = $_FILES['image']['name'];
     $text = $_POST['text'];
@@ -19,14 +19,22 @@ if (isset($_POST['upload'])) {
     $book_genre = $_POST['book_genre'];
     $book_author = $_POST['book_author'];
 
-    if (empty($username)) {
-        array_push($errors, "Username is required.");
-    }
-    if (empty($book_name)) {
-        array_push($errors, "Book name is required.");
-    }
-    if (empty($book_author)) {
-        array_push($errors, "Book author is required.");
+    if (empty($username)) { array_push($errors, "Username is required."); } 
+    if (empty($book_name)) { array_push($errors, "Book name is required."); } 
+    if (empty($book_author)) { array_push($errors, "Book author is required."); } 
+    if (empty($book_genre)) { array_push($errors, "Book genre is required."); } 
+    if (empty($text)) { array_push($errors, "You forgot to fill the review zone."); } 
+    if (empty($image)) { array_push($errors, "You forgot to upload an image."); } 
+
+    if (count($errors) == 0) { 
+    //execute sql statement
+    $sth = $db->prepare("INSERT INTO book_reviews(username, book_name, book_author, book_genre, book_review, book_image) values ('$username', '$book_name', '$book_author', '$book_genre', '$text', '$image')");
+    $sth->execute();
+    //now save the local file
+    if(move_uploaded_file($_FILES['image']['tmp_name'], $target)){
+        $msg = "Image uploaded successfully";
+    } else {
+        $msg = "There was a problem uploading image";
     }
     if (empty($book_genre)) {
         array_push($errors, "Book genre is required.");
@@ -58,7 +66,7 @@ if (isset($_POST['upload'])) {
         //echo "</div>";
     }
 }
-
+}
 ?>
 
 <!DOCTYPE html>
@@ -73,10 +81,9 @@ if (isset($_POST['upload'])) {
 </head>
 
 <body>
-    <?php include 'header.php'  ?>
+    <?php include 'header.php';  ?>
     <div id="content">
         <form method="post" enctype="multipart/form-data" class="add_review_form">
-
             <?php
             //$db = mysqli_connect('eu-cdbr-west-02.cleardb.net', 'bb805e9a46b13e', '5b8a2c50', 'heroku_18acf4529517193', '3306');
             $dbh = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
@@ -128,5 +135,4 @@ if (isset($_POST['upload'])) {
     </script>
 
 </body>
-
 </html>
