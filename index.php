@@ -4,6 +4,7 @@
     <head>
         <title>BookReviewer</title>
         <link rel="shortcut icon" type="image/png" href="./images/favicon_browser.png"/>
+        <meta name="description" content="Add book reviews so you can read them whenever you want.">
         <link rel="stylesheet" type="text/css" href="assets/css/header.css">
         <link rel="stylesheet" type="text/css" href="assets/css/footer.css">
         <link rel="stylesheet" type="text/css" href="assets/css/main.css">
@@ -81,16 +82,19 @@
     <section class = "horizontalSection middlePoz">
         <?php
       //code used to get the last 5 images inserted in the database
-      $db = mysqli_connect('eu-cdbr-west-02.cleardb.net', 'bb805e9a46b13e', '5b8a2c50', 'heroku_18acf4529517193', '3306');
+      $db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
       $sql = "SELECT * FROM book_reviews order by book_id desc";
-      $result = mysqli_query($db, $sql);
+      $sth = $db->prepare($sql);
+      $sth->execute();
+      
       $i = 10;
       //explanation: at every iteration we extract the image and the text from the db
       //and we fill a div with the id img_div with it
+      //use PDO and prepare statements to avoid sql injection
       echo "<div class='top_five_parent'>";
-      while($row = mysqli_fetch_array($result)){
-          echo "<div id='top_five_layout'>";
-              echo "<img class='top_five_image' src='reviewedImages/".$row['book_image']."'>";
+      while($row = $sth->fetch(PDO::FETCH_BOTH)){
+          echo "<div class='top_five_layout'>";
+              echo "<img class='top_five_image' alt='One of the last added books' src='reviewedImages/".$row['book_image']."'>";
               echo "<p>".$row['book_name']."</p>";
               echo "<p>".$row['book_author']."</p>";
               echo "<p>".$row['book_genre']."</p>";
@@ -114,7 +118,7 @@
           </p>
           </div>
           <div>
-              <img src="https://picsum.photos/1700/200" class= "info">
+              <img src="https://picsum.photos/1700/200" alt="placeholderImage" class= "info">
           </div>
       </section>
     </section>
@@ -122,7 +126,7 @@
     <section class = "verticalSection">
       <section  class="horizontalSection_statistics">
          <div class="quotes">
-              <img src="https://picsum.photos/100/200" id="personalityPortret">
+              <img src="https://picsum.photos/100/200" alt="placeholderImage" id="personalityPortret">
               <ul class = "nodotlist">
                   <li>
                       <p class="quotewrt">
