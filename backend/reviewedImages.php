@@ -66,7 +66,7 @@ if (isset($_POST['upload'])) {
         //echo "</div>";
     }
 }
-
+}
 ?>
 
 <!DOCTYPE html>
@@ -81,7 +81,7 @@ if (isset($_POST['upload'])) {
 </head>
 
 <body>
-    <?php include 'header.php'  ?>
+    <?php include 'header.php';  ?>
     <div id="content">
         <form method="post" enctype="multipart/form-data" class="add_review_form">
             <?php
@@ -135,5 +135,4 @@ if (isset($_POST['upload'])) {
     </script>
 
 </body>
-
 </html>
