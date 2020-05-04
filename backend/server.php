@@ -12,16 +12,17 @@ include('errors.php');
 // DBMS connection code -> hostname, 
 // username, password, database name 
 //heroku database information
-$db = mysqli_connect('eu-cdbr-west-02.cleardb.net', 'bb805e9a46b13e', '5b8a2c50', 'heroku_18acf4529517193', '3306'); 
+$db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
+
 if (isset($_POST['reg_user'])) { 
     // Receiving the values entered and storing 
     // in the variables 
     // Data sanitization is done to prevent 
     // SQL injections 
-    $username = mysqli_real_escape_string($db, $_POST['username']); 
-    $email = mysqli_real_escape_string($db, $_POST['email']); 
-    $password_1 = mysqli_real_escape_string($db, $_POST['password_1']); 
-    $password_2 = mysqli_real_escape_string($db, $_POST['password_2']); 
+    $username = $_POST['username']; 
+    $email = $_POST['email']; 
+    $password_1 = $_POST['password_1']; 
+    $password_2 = $_POST['password_2']; 
 
     // Ensuring that the user has not left any input field blank 
     // error messages will be displayed for every blank input 
@@ -42,10 +43,10 @@ if (isset($_POST['reg_user'])) {
           
         // Inserting data into table 
         $query = "INSERT INTO users (username, email, password)  
-                  VALUES('$username', '$email', '$password')";  
-          
-        mysqli_query($db, $query); 
-   
+        VALUES('$username', '$email', '$password')";  
+        $sth = $db->prepare($query);
+        $sth->execute();
+        
         // Storing username of the logged in user, 
         // in the session variable 
         $_SESSION['username'] = $username; 
@@ -61,8 +62,8 @@ if (isset($_POST['reg_user'])) {
 }
 if (isset($_POST['login_user'])) { 
     // Data sanitization to prevent SQL injection 
-    $username = mysqli_real_escape_string($db, $_POST['username']); 
-    $password = mysqli_real_escape_string($db, $_POST['password']); 
+    $username = $_POST['username']; 
+    $password = $_POST['password']; 
 
      // Error message if the input field is left blank 
      if (empty($username)) { 
@@ -79,12 +80,13 @@ if (isset($_POST['login_user'])) {
         $password = md5($password); 
           
         $query = "SELECT * FROM users WHERE username= 
-                '$username' AND password='$password'"; 
-        $results = mysqli_query($db, $query); 
+                '$username' AND password='$password'";
+        $sth = $db->prepare($query);
+        $sth->execute();  
         
         // $results = 1 means that one user with the 
         // entered username exists 
-        if (mysqli_num_rows($results) == 1) { 
+        if ($sth->rowCount() > 0) { 
               
             // Storing username in session variable 
             $_SESSION['username'] = $username; 
