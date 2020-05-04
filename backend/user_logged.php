@@ -53,7 +53,7 @@ $_SESSION['is_admin'] = $is_admin;
     <!-- welcome message for the logged in user -->
     <?php if (isset($_SESSION['username'])) : ?>
 
-        <?php include 'index.php'; ?>
+        <?php include 'reviewedImages.php'; ?>
 
         <!-- <a href="reviewedImages.php">Go to reviewedImages</a> -->
         <!-- Include the addReviews page -->
