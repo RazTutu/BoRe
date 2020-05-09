@@ -223,9 +223,6 @@ if(isset($_POST['updateProgress'])){
         </div>
     </div>
 
-    <h1>test</h1>
-
-
     <script>
         //prevent form resubmission when page is refreshed
         if (window.history.replaceState) {
