@@ -140,10 +140,9 @@ body {
   text-decoration: none;
   outline: none;
   color: #fff;
-  background-color: #dfcf44;
+  background-color: #ffbb54;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 9px rgb(192, 127, 127);
 }
 
 .logout:hover {
@@ -153,5 +152,4 @@ body {
 .logout:active {
   background-color: #b89b1c;
   box-shadow: 0 3px rgb(168, 130, 130);
-  transform: translateY(4px);
 }

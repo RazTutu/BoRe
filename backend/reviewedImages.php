@@ -28,28 +28,18 @@ if (isset($_POST['upload'])) {
     if (empty($image)) { array_push($errors, "You forgot to upload an image."); } 
 
     if (count($errors) == 0) { 
-    //execute sql statement
-    $sth = $db->prepare("INSERT INTO book_reviews(username, book_name, book_author, book_genre, book_review, book_image) values ('$username', '$book_name', '$book_author', '$book_genre', '$text', '$image')");
-    $sth->execute();
+    
     //now save the local file
     if(move_uploaded_file($_FILES['image']['tmp_name'], $target)){
         $msg = "Image uploaded successfully";
     } else {
         $msg = "There was a problem uploading image";
     }
-    if (empty($book_genre)) {
-        array_push($errors, "Book genre is required.");
-    }
-    if (empty($text)) {
-        array_push($errors, "You forgot to fill the review zone.");
-    }
-    if (empty($image)) {
-        array_push($errors, "You forgot to upload an image.");
-    }
 
     if (count($errors) == 0) {
-        $sql = "INSERT INTO book_reviews(username, book_name, book_author, book_genre, book_review, book_image) values ('$username', '$book_name', '$book_author', '$book_genre', '$text', '$image')";
-        mysqli_query($db, $sql);
+        //execute sql statement
+        $sth = $db->prepare("INSERT INTO book_reviews(username, book_name, book_author, book_genre, book_review, book_image) values ('$username', '$book_name', '$book_author', '$book_genre', '$text', '$image')");
+        $sth->execute();
         //now save the local file
         if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
             $msg = "Image uploaded successfully";
@@ -67,7 +57,48 @@ if (isset($_POST['upload'])) {
         //echo "</div>";
     }
 }
+
+
 }
+
+//if post progress button is pressed
+if (isset($_POST['upload_progress_form'])) {
+    //All the form errors(empty fields for example) will be stored inside errors array
+    $errors = array();
+    //connect to the db
+    $db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
+    //get the subbmited data
+    $username = $_SESSION['username'];
+    $book_name = $_POST['progress_book_name'];
+    $progress_book_pages = $_POST['progress_book_pages'];
+    $progress_book_current_page = $_POST['progress_book_current_page'];
+
+    if (empty($book_name)) { array_push($errors, "Progress book name required."); } 
+    if (empty($progress_book_pages)) { array_push($errors, "Book number of pages required."); } 
+    if (empty($progress_book_current_page)) { array_push($errors, "Progress book current page required."); } 
+
+    if (count($errors) == 0) {
+        //$sql = "INSERT INTO book_progress(username, book_name, number_of_pages, current_page, progress_Date) values ('$username', '$book_name', '$progress_book_pages', '$progress_book_current_page', NOW())";
+        $sth = $db->prepare("INSERT INTO book_progress(username, book_name, number_of_pages, current_page, progress_Date) values ('$username', '$book_name', '$progress_book_pages', '$progress_book_current_page', NOW());");
+    
+       // $sth = $db->prepare($sql);
+        $sth->execute();
+    }
+
+
+}
+
+if(isset($_POST['updateProgress'])){
+    $db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
+    $progressValue = $_POST['progress_bar_value'];
+    $name_of_user = $_SESSION['username'];
+    $name_of_book = $_SESSION['last_progress_session'];
+    $sth = $db->prepare("UPDATE book_progress SET current_page = '$progressValue'
+    where username = '$name_of_user' and book_name= '$name_of_book';");
+    // $sth = $db->prepare($sql);
+    $sth->execute();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -127,6 +158,73 @@ if (isset($_POST['upload'])) {
 
     </div>
 
+    <div class="progress_content">
+        <div class="progress_form">
+            <form method="post" enctype="multipart/form-data" class="add_progress">
+                <h2>Book not finished?</h1>
+                <h3>Tell us and we manage your progress.</h2>
+                <label for="progress_book_name">Book name:</label>
+                <input type="text" id="progress_book_name" name="progress_book_name" class="progress_field">
+                <br>
+                <label for="progress_book_pages">Number of pages:</label>
+                <input type="number" id="progress_book_pages" name="progress_book_pages" class="progress_field">
+                <br>
+                <label for="progress_book_current_page">Your current page:</label>
+                <input type="number" id="progress_book_current_page" name="progress_book_current_page" class="progress_field">
+                <div class="upload_review_button">
+                <input type="submit" name="upload_progress_form" value="Upload progress" class="button_style">
+                </div>
+
+            </form>
+        </div>
+        <div class="last_progress">
+            <h2>Your latest book progress</h2>
+            
+            <?php
+                $dbh = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
+                $sth = $dbh->prepare("SELECT * from book_progress WHERE username=" . "'" . $_SESSION['username'] . "'" . 
+                "ORDER BY progress_Date DESC
+                LIMIT 1" . ";");
+                $sth->execute();
+                while($row = $sth->fetch(PDO::FETCH_BOTH)){
+                    echo "<div class='top_five_layout'>";
+                        //echo "<img class='top_five_image' alt='One of the last added books' src='reviewedImages/".$row['book_image']."'>";
+                        echo "<h3>".$row['book_name']."</h3>";
+                        $sliderValue = $row['current_page'];
+                        $_SESSION['last_progress_session'] = $row['book_name'];
+                        $number_of_pages = $row['number_of_pages'];
+                        //echo "<p>".$row['book_review']."</p>"; //with this line you can get even the book review
+                        //but don't show it because it may be too long.
+                    echo "</div>";
+                }
+
+
+            ?>
+
+            
+            <form method="post" enctype="multipart/form-data" class="updateLatestProgress">
+            <div class="rangeZone">
+	            <span class="rangeZoneInner"><span id="rangeValue"><?php echo $sliderValue ?></span><span> / <span><?php  echo $number_of_pages ?></span> Pages read</span></span>
+	            <input class="range" type="range" name="progress_bar_value" value="<?php echo $sliderValue ?>" min="0" max="<?php echo $number_of_pages?>"
+	            onChange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)">
+            </div>
+            <input type="submit" name="updateProgress" value="Update progress" class="button_style">
+            
+            </form>
+            <script>
+                function rangeSlide(value){
+                    document.getElementById('rangeValue').innerHTML = value;
+                    $sliderValue = value;
+                }
+            </script>
+
+
+            
+        </div>
+    </div>
+
+    <h1>test</h1>
+
 
     <script>
         //prevent form resubmission when page is refreshed
@@ -134,6 +232,8 @@ if (isset($_POST['upload'])) {
             window.history.replaceState(null, null, window.location.href);
         }
     </script>
+
+    
 
 </body>
 </html>
