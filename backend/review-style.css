@@ -1,0 +1,51 @@
+.content {
+  background-color: #f3f3f3;
+  font-family: arial;
+}
+.article-container {
+  width: 90%;
+  padding: 0 20px;
+}
+.article-box {
+  width: 70%;
+  background-color: #e3d4b6;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 8px;
+}
+.review {
+  width: 80%;
+  padding: 13px 1em;
+}
+.book-name {
+  width: 60%;
+  padding: 0 1em;
+}
+.rev {
+  padding: 0 14em;
+}
+.book-author {
+  padding: 0 1em;
+  width: 50%;
+}
+@media screen and (max-width: 1100px) {
+}
+@media screen and (max-width: 940px) {
+  .rev {
+    padding: 0 6em;
+  }
+}
+@media screen and (max-width: 740px) {
+  .rev {
+    padding: 0 3em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .article-box {
+    width: 100%;
+  }
+  .rev {
+    padding: 0 8em;
+  }
+}

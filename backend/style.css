@@ -32,7 +32,8 @@ body {
   width: 100%;
 }
 
-#sidebar a {
+#sidebar a,
+.srch-button {
   background: #ffbb54;
   color: white;
   display: flex;

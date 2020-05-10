@@ -13,12 +13,17 @@
       </a>
     </li>
     <li>
-      <a href="#" class="link">
+      <a href="display_review.php" class="link">
         <span class="label">Your reviews</span>
         <i class="fas fa-book"></i>
       </a>
     </li>
-
+    <li>
+      <form class="srch-button" action="search.php" method="POST">
+        <input type="text" name="search" placeholder="Search reviews">
+        <button type="submit" name="submint-search">Search</button>
+      </form>
+    </li>
 
     <?php
     if ($_SESSION['is_admin'] == 1) {
@@ -31,4 +36,5 @@
     }
     ?>
   </ul>
+
 </div>
