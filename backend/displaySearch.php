@@ -6,17 +6,17 @@ if (session_status() == PHP_SESSION_NONE) {
 ?>
 
 <?php include 'header.php'  ?>
-
-<input type="text" id="search-bar" name="search" placeholder="Search reviews">
-<select id="dropdown">
-    <option>
-        All reviews
-    </option>
-    <option>
-        Your reviews
-    </option>
-</select>
-
+<div class="cob">
+    <input type="text" id="search-bar" name="search" placeholder="Search reviews">
+    <select id="dropdown">
+        <option class="opt1">
+            All reviews
+        </option>
+        <option class="opt2">
+            Your reviews
+        </option>
+    </select>
+</div>
 <div id="reviews" class="article-container"></div>
 
 <script>

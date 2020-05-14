@@ -12,17 +12,18 @@
         <i class="fas fa-graduation-cap"></i>
       </a>
     </li>
-    <li>
+    <!-- <li>
       <a href="display_review.php" class="link">
         <span class="label">Your reviews</span>
         <i class="fas fa-book"></i>
       </a>
-    </li>
+    </li> -->
     <li>
       <a href="displaySearch.php" class="link">
-        <span class="label">Search for reviews</span>
-        <i class="fas  fa-search"></i>
+        <span class="label">List of reviews</span>
+        <i class="fas fa-list-alt"></i>
       </a>
+
       <!-- <form class="srch-button">
         <input type="text" name="search" onkeyup="func(this.value)" placeholder="Search reviews">
         <button type="submit" name="submint-search" onkeyup="func(this.value)">Search</button> 
