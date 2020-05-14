@@ -19,10 +19,14 @@
       </a>
     </li>
     <li>
-      <form class="srch-button" action="search.php" method="POST">
-        <input type="text" name="search" placeholder="Search reviews">
-        <button type="submit" name="submint-search">Search</button>
-      </form>
+      <a href="displaySearch.php" class="link">
+        <span class="label">Search for reviews</span>
+        <i class="fas  fa-search"></i>
+      </a>
+      <!-- <form class="srch-button">
+        <input type="text" name="search" onkeyup="func(this.value)" placeholder="Search reviews">
+        <button type="submit" name="submint-search" onkeyup="func(this.value)">Search</button> 
+      </form> -->
     </li>
 
     <?php

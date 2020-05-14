@@ -40,6 +40,7 @@ $_SESSION['is_admin'] = $is_admin;
 
 <body>
 
+
     <?php if (isset($_SESSION['success'])) : ?>
 
         <?php
