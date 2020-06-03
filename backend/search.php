@@ -1,15 +1,36 @@
 <?php
 session_start();
 $db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
+//globals $GENRES = ['ACTION', 'HORROR'];
 if (isset($_GET['title'])) {
     $search =  $_GET['title'];
     $author = $_GET['author'];
+    $genre = $_GET['genre'];
 
-    if ($author) {
+
+
+    if (strncmp($author, "autor", 3) == 0) {
+        if (!empty($genre)) {
+            $sql = "SELECT * FROM book_reviews WHERE book_author LIKE '%$search%' AND book_genre LIKE '%$genre%'";
+        } else {
+            $sql = "SELECT * FROM book_reviews WHERE book_author LIKE '%$search%'; ";
+        }
+    } else if (strncmp($author, "genre", 3) == 0) {
+        if (!empty($genre)) {
+            $sql = "SELECT * FROM book_reviews WHERE book_name LIKE '%$search%'AND book_genre LIKE '%$genre%'";
+        } else {
+            $sql = "SELECT * FROM book_reviews WHERE book_name LIKE '%$search%'";
+        }
+    } else if ($author) {
         $sql = "SELECT * FROM book_reviews WHERE book_name LIKE '%$search%' AND username LIKE '%$author%';";
     } else {
-        $sql = "SELECT * FROM book_reviews WHERE book_name LIKE '%$search%';";
+        if (!empty($genre)) {
+            $sql = "SELECT * FROM book_reviews WHERE book_name LIKE '%$search%' AND book_genre LIKE '%$genre%'";
+        } else {
+            $sql = "SELECT * FROM book_reviews WHERE book_name LIKE '%$search%'";
+        }
     }
+    echo $sql;
 
     $sth = $db->prepare($sql);
     $sth->execute();
@@ -22,6 +43,7 @@ if (isset($_GET['title'])) {
 
             echo "<h3 class='book-name'>" . "Book : " . $row['book_name'] . "</h3>";
             echo "<p class='book-author'>" . "Author : " . $row['book_author'] . "</p>";
+            echo "<p class='book-genre'>" . "Genre : " . $row['book_genre'] . "</p>";
             echo "<p class='rev'> - Review - </p>";
             echo "<p class='review'>"  . $row['book_review'] . "</p>";
             echo "<p class='review'>" . 'username: ' . $row['username'] . "</p>";
