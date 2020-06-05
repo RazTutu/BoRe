@@ -107,6 +107,7 @@ if(isset($_POST['updateProgress'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="../images/favicon_browser.png"/>
     <link rel="stylesheet" type="text/css" href="review_image_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <title>review_image</title>

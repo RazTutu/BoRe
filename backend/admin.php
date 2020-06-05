@@ -7,6 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="../images/favicon_browser.png"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <title>Admin</title>
 </head>
@@ -15,7 +16,7 @@ session_start();
     <?php include 'header.php'  ?>
     <?php
     if ($_SESSION['is_admin'] == 1) {
-        echo "<p>The user is an admin</p>";
+        include 'admin_page_valid.php';
     } else {
         echo "<p>The user is not an admin</p>";
     }

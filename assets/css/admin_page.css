@@ -1,0 +1,45 @@
+.admin_statistics{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 1em;
+}
+
+#genre_statistics{
+    width: 25em;
+    height: 15em;
+}
+
+#genre_statistics_2{
+    width: 25em;
+    height: 15em;
+}
+
+.sectionTitle{
+    text-align: center;
+}
+
+
+
+
+@media only screen and (max-width: 922px) {
+    .admin_statistics{
+        flex-direction: column;
+        align-items: center;
+    }
+  }
+
+
+@media only screen and (max-width: 425px) {
+    #genre_statistics{
+        width: 18em;
+        height: 15em;
+       
+    }
+    
+    #genre_statistics_2{
+        width: 18em;
+        height: 15em;
+        
+    }
+}
