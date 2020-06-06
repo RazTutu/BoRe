@@ -1,4 +1,64 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+function alert($msg) {
+    echo "<script type='text/javascript'>alert('$msg');</script>";
+}
 
+//connect to db
+$db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
+
+$adminFound = "";
+if (isset($_POST['updateAdmin'])) {
+    $username = $_POST['username'];
+    $query = "SELECT * FROM users WHERE username= '$username'";
+    $sth = $db->prepare($query);
+    $sth->execute();  
+    if ($sth->rowCount() > 0) { 
+        $second_sth = $db->prepare("UPDATE users SET is_admin = 1
+        where username = '$username';");
+        $second_sth->execute();
+        $adminFound = "The selected user is now admin.";
+    } else {
+        $adminFound = "User not found.";
+    }
+}
+
+$userFound = "";
+if (isset($_POST['update_remove'])) {
+    $username = $_POST['username_remove'];
+    $query = "SELECT * FROM users WHERE username= '$username'";
+    $sth = $db->prepare($query);
+    $sth->execute(); 
+    if ($sth->rowCount() > 0) { 
+        $second_sth = $db->prepare("DELETE FROM users
+        WHERE username = '$username';");
+        $second_sth->execute();
+    } else {
+        $userFound = "User not found.";
+    }
+
+    
+}
+
+$bookUserFound = "";
+if (isset($_POST['book_remove'])) {
+    $book_name = $_POST['bookname_remove'];
+    $username = $_POST['book_username_remove'];
+    $query = "SELECT * FROM book_reviews WHERE username= '$username' and book_name = '$book_name';";
+    $sth = $db->prepare($query);
+    $sth->execute(); 
+    if ($sth->rowCount() > 0) { 
+        $second_sth = $db->prepare("DELETE FROM book_reviews
+        WHERE username = '$username' AND book_name = '$book_name';");
+        $second_sth->execute();
+    } else {
+        $bookUserFound = "Book or user not found.";
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,6 +104,9 @@
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('genre_statistics'));
         chart.draw(data, options);
+        $(window).resize(function(){
+        drawChart();
+    });
       }
     </script>
 
@@ -83,6 +146,10 @@ function drawChart() {
     // Instantiate and draw our chart, passing in some options.
     var chart = new google.visualization.PieChart(document.getElementById('genre_statistics_2'));
     chart.draw(data, options);
+
+    $(window).resize(function(){
+        drawChart();
+    });
   }
 </script>
 
@@ -100,8 +167,38 @@ function drawChart() {
     </section>
 
     <section>
-        <div class="sectionTitle">
-            <h1>Now let's go to another topic</h1>
+        <div class="makeAdmin">
+            <h3 class="admin_title"> Type here the name of a user you want to make admin. </h3>
+            <?php   
+                echo "<p class='admin_not_found'>$adminFound</p>";
+            ?>
+            <form method="post" class="make_admin_form">
+                <input type="text" name="username" placeholder="Username" class="admin_field" required>
+                <input type="submit" name="updateAdmin" value="Create admin" class="admin_button">
+                <br>
+            </form>
+           
+
+            <h3 class="admin_title"> Type here the name of a user you want to remove. </h3>
+            <?php   
+                echo "<p class='admin_not_found'>$userFound</p>";
+            ?>
+            <form method="post" class="make_admin_form">
+                <input type="text" name="username_remove" placeholder="Username" class="admin_field" required>
+                <input type="submit" name="update_remove" value="Delete" class="admin_button">
+            </form>
+
+            <h3 class="admin_title"> Remove a book review. </h3>
+            <?php   
+                echo "<p class='admin_not_found'>$bookUserFound</p>";
+            ?>
+            <form method="post" class="delete_review_form">
+                <div class="remove_inputs">
+                <input type="text" name="bookname_remove" placeholder="Book name" class="admin_field" required>
+                <input type="text" name="book_username_remove" placeholder="User who posted it" class="admin_field" required>
+                </div>
+                <input type="submit" name="book_remove" value="Delete" class="remove_review_button">
+            </form>
         </div>
     </section>
 

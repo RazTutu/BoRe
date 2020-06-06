@@ -133,22 +133,22 @@ if(isset($_POST['updateProgress'])){
             ?>
 
             <h1 class="header_message">Add a book review</h1>
-            <input type="text" name="book_name" id="book_name_id" placeholder="Book name" class="input_field">
+            <input type="text" name="book_name" id="book_name_id" placeholder="Book name" class="input_field" required>
             <br>
 
-            <input type="text" name="book_author" id="book_author" placeholder="Book author" class="input_field">
+            <input type="text" name="book_author" id="book_author" placeholder="Book author" class="input_field" required>
             <br>
-            <input type="text" name="book_genre" id="book_genre_id" placeholder="Book genre" class="input_field">
+            <input type="text" name="book_genre" id="book_genre_id" placeholder="Book genre" class="input_field" required>
             <br>
             <div class="review_input">
                 <label for="review_zone_id" class="review_zone_label">Review of the book:</label>
-                <textarea name="text" cols="40" rows="4" placeholder="Your review goes here." id="review_zone_id" class="review_zone_text"></textarea>
+                <textarea name="text" cols="40" rows="4" placeholder="Your review goes here." id="review_zone_id" class="review_zone_text" required></textarea>
             </div>
 
 
             <div>
                 <label for="upload_image_button">Image of the book</label>
-                <input type="file" id="upload_image_button" name="image">
+                <input type="file" id="upload_image_button" name="image" required>
             </div>
 
             <div class="upload_review_button">
@@ -165,13 +165,13 @@ if(isset($_POST['updateProgress'])){
                 <h2>Book not finished?</h1>
                 <h3>Tell us and we manage your progress.</h2>
                 <label for="progress_book_name">Book name:</label>
-                <input type="text" id="progress_book_name" name="progress_book_name" class="progress_field">
+                <input type="text" id="progress_book_name" name="progress_book_name" class="progress_field" required>
                 <br>
                 <label for="progress_book_pages">Number of pages:</label>
-                <input type="number" id="progress_book_pages" name="progress_book_pages" class="progress_field">
+                <input type="number" id="progress_book_pages" name="progress_book_pages" class="progress_field" required>
                 <br>
                 <label for="progress_book_current_page">Your current page:</label>
-                <input type="number" id="progress_book_current_page" name="progress_book_current_page" class="progress_field">
+                <input type="number" id="progress_book_current_page" name="progress_book_current_page" class="progress_field" required>
                 <div class="upload_review_button">
                 <input type="submit" name="upload_progress_form" value="Upload progress" class="button_style">
                 </div>

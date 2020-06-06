@@ -4,8 +4,8 @@
         <img src="./images/loading.gif" class="imge" alt="gif happy book"/>
         <form action ="index.php?logout='1'" method="POST">
             <?php include('./backend/errors.php'); ?> 
-            <input type="text" placeholder="Username" class="inputLoginForm" name="username">
-            <input type="password" placeholder="Password" class="inputLoginForm" name="password">
+            <input type="text" placeholder="Username" class="inputLoginForm" name="username" required>
+            <input type="password" placeholder="Password" class="inputLoginForm" name="password" required>
             <button type="submit" class="loginFormButton" name="login_user">
                 <span>
                     Login
@@ -22,10 +22,10 @@
         <img src="./images/loading.gif" class="imge" alt="gif happy book"/>
         <form action="index.php?logout='1'" method="POST">
             <?php include('./backend/errors.php'); ?> 
-            <input type="email" placeholder="Email" class="inputLoginForm" name="email">
-            <input type="text" placeholder="Username" class="inputLoginForm" name="username">
-            <input type="password" placeholder="Password" class="inputLoginForm" name="password_1">
-            <input type="password" placeholder="Confirm Password" class="inputLoginForm" name="password_2">
+            <input type="email" placeholder="Email" class="inputLoginForm" name="email" required>
+            <input type="text" placeholder="Username" class="inputLoginForm" name="username" required>
+            <input type="password" placeholder="Password" class="inputLoginForm" name="password_1" required>
+            <input type="password" placeholder="Confirm Password" class="inputLoginForm" name="password_2" required>
             <button type="submit" class="loginFormButton" name="reg_user">
                 <span>
                     Register 
