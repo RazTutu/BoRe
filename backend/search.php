@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 $db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
@@ -40,12 +41,17 @@ if (isset($_GET['title'])) {
     if ($row_count > 0) {
         while ($row = $sth->fetch(PDO::FETCH_BOTH)) {
             echo "<div class='article-box'>";
-
             echo "<h3 class='book-name'>" . "Book : " . $row['book_name'] . "</h3>";
             echo "<p class='book-author'>" . "Author : " . $row['book_author'] . "</p>";
             echo "<p class='book-genre'>" . "Genre : " . $row['book_genre'] . "</p>";
             echo "<p class='rev'> - Review - </p>";
-            echo "<p class='review'>"  . $row['book_review'] . "</p>";
+            $len = strlen($row['book_review']);
+            if ($len > 200) {
+                echo "<p class='review'>"  . substr($row['book_review'], 0, 200) . "<span class='dots'>...</span><span class='more'>" . substr($row['book_review'], 201, $len) . "</span>" . "</p>";
+            } else {
+                echo "<p class='review'>"  . substr($row['book_review'], 0, 200) . "<span class='dots'></span><span class='more'>" . substr($row['book_review'], 201, $len) . "</span>" . "</p>";
+            }
+            echo "<button  class='myBtn'>Read more</button>";
             echo "<p class='review'>" . 'username: ' . $row['username'] . "</p>";
             echo "</div>";
         }
@@ -62,8 +68,15 @@ if (isset($_GET['title'])) {
             echo "<div class='article-box'>";
             echo "<h3 class='book-name'>" . "Book : " . $row['book_name'] . "</h3>";
             echo "<p class='book-author'>" . "Author : " . $row['book_author'] . "</p>";
+            $len = strlen($row['book_review']);
             echo "<p class='rev'> - Review - </p>";
-            echo "<p class='review'>"  . $row['book_review'] . "</p>";
+            if ($len > 200) {
+                echo "<p class='review'>"  . substr($row['book_review'], 0, 200) . "<span class='dots'>...</span><span class='more'>" . substr($row['book_review'], 201, $len) . "</span>" . "</p>";
+            } else {
+                echo "<p class='review'>"  . substr($row['book_review'], 0, 200) . "<span class='dots'></span><span class='more'>" . substr($row['book_review'], 201, $len) . "</span>" . "</p>";
+            }
+            echo "<button  class='myBtn'>Read more</button>";
+            echo "<p class='review'>" . 'username: ' . $row['username'] . "</p>";
             echo "</div>";
             $i = $i - 1;
             if ($i == 0) {

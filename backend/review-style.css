@@ -111,3 +111,6 @@
     margin-top: 1em;
   }
 }
+.more {
+  display: none;
+}

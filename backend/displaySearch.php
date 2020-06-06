@@ -43,6 +43,35 @@ $db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf452951
 <div id="reviews" class="article-container"></div>
 
 <script>
+    function showMore() {
+
+        console.log([...document.getElementsByClassName("article-box")]);
+        [...document.getElementsByClassName("article-box")].forEach((element) => {
+            console.log("ajunge aici");
+            var moreText = element.getElementsByClassName("more")[0];
+            var dots = element.getElementsByClassName("dots")[0];
+            var btn = element.getElementsByClassName("myBtn")[0];
+            console.log(moreText);
+            console.log(dots);
+            console.log(btn);
+            btn.addEventListener('click', () => {
+                console.log("am apasat ceva");
+                if (dots.style.display === "none") {
+                    dots.style.display = "inline";
+                    moreText.style.display = "none";
+
+                } else {
+
+                    dots.style.display = "none";
+                    moreText.style.display = "inline";
+                }
+            })
+
+        });
+
+
+    }
+
     const searchbar = document.getElementById('search-bar');
     const author = "<?php echo $_SESSION['username']; ?>";
     const dropdown = document.getElementById('dropdown');
@@ -59,7 +88,7 @@ $db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf452951
         console.log('author: ', author);
         console.log('genre: ', reviewGenre);
         document.getElementById("reviews").innerHTML = results;
-        console.log(title);
+        showMore();
     }
 
     const handleKeyPress = () => {
