@@ -104,21 +104,18 @@ if(isset($_POST['updateProgress'])){
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="../images/favicon_browser.png"/>
-    <link rel="stylesheet" type="text/css" href="review_image_style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <title>review_image</title>
-</head>
+if (isset($_GET['logout'])) {
+  session_destroy();
+  unset($_SESSION['username']);
+  header("location: ../index.php");
+}
+?>
 
-<body>
+
     <?php include 'header.php';  ?>
-    <div id="content">
+    <div class="content_validated">
         <form method="post" enctype="multipart/form-data" class="add_review_form">
             <?php
             //$db = mysqli_connect('eu-cdbr-west-02.cleardb.net', 'bb805e9a46b13e', '5b8a2c50', 'heroku_18acf4529517193', '3306');
@@ -165,8 +162,8 @@ if(isset($_POST['updateProgress'])){
     <div class="progress_content">
         <div class="progress_form">
             <form method="post" enctype="multipart/form-data" class="add_progress">
-                <h2>Book not finished?</h1>
-                <h3>Tell us and we manage your progress.</h2>
+                <h2>Book not finished?</h2>
+                <h3>Tell us and we manage your progress.</h3>
                 <label for="progress_book_name">Book name:</label>
                 <input type="text" id="progress_book_name" name="progress_book_name" class="progress_field" required>
                 <br>
@@ -233,7 +230,8 @@ if(isset($_POST['updateProgress'])){
             window.history.replaceState(null, null, window.location.href);
         }
     </script>
-
+    </div>
+    </div>
     
 
 </body>

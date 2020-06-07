@@ -1,7 +1,7 @@
 <div id="sidebar">
   <ul>
     <li>
-      <a href="reviewedImages.php" class="link">
+      <a href="user_logged.php" class="link">
         <span class="label">Write a review</span>
         <i class="fas fa-file-signature"></i>
       </a>

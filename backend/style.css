@@ -9,7 +9,8 @@ body {
   justify-content: space-between;
   min-height: 100%;
 }
-#content {
+
+.content_validated{
   height: 100%;
   flex: 7;
 }

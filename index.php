@@ -25,13 +25,13 @@
     </head>
 <body class="body">
  
-    <header class="header">
+    <div class="header">
 
     <?php
         include('header.html');
     ?>
 
-    </header>
+    </div>
 
 <main class="content" id="page">
   <section class = "mainLayout">

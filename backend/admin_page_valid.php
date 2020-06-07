@@ -1,10 +1,24 @@
 <?php
+if (!isset($_SESSION['username'])) {
+    $_SESSION['msg'] = "You have to log in first";
+    //header('location: ../index.php'); 
+    echo $_SESSION['msg'];
+}
+
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: ../index.php");
+}
+?>
+
+<?php
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 function alert($msg)
 {
-    echo "<script type='text/javascript'>alert('$msg');</script>";
+    echo "<script>alert('$msg');</script>";
 }
 
 //connect to db
@@ -61,19 +75,10 @@ if (isset($_POST['book_remove'])) {
 }
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../assets/css/admin_page.css">
-    <link rel="shortcut icon" type="image/png" href="../images/favicon_browser.png" />
-    <title>Admin page</title>
 
     <!--Load the AJAX API-->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
         // Load the Visualization API and the corechart package.
         google.charts.load('current', {
             'packages': ['corechart']
@@ -122,7 +127,7 @@ if (isset($_POST['book_remove'])) {
 
 
 
-    <script type="text/javascript">
+    <script>
         // Load the Visualization API and the corechart package.
         google.charts.load('current', {
             'packages': ['corechart']
@@ -173,10 +178,10 @@ if (isset($_POST['book_remove'])) {
         }
     </script>
 
-</head>
 
-<body>
-    <section>
+
+
+    <div>
         <div class="admin_statistics">
             <div class="admin_statistic_one">
                 <div id="genre_statistics"></div>
@@ -185,9 +190,9 @@ if (isset($_POST['book_remove'])) {
                 <div id="genre_statistics_2"></div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section>
+    <div>
         <div class="makeAdmin">
             <h3 class="admin_title"> Type here the name of a user you want to make admin. </h3>
             <?php
@@ -229,8 +234,6 @@ if (isset($_POST['book_remove'])) {
 
             ?>
         </div>
-    </section>
-
-</body>
-
-</html>
+    </div>
+    </div>
+    </div>

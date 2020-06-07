@@ -1,7 +1,6 @@
-#content{
+.content_validated{
     width: 50%;
     margin: 0 auto;
-    
 }
 .add_review_form{
     width: 90%;
@@ -137,7 +136,7 @@
 }
 
 @media only screen and (max-width: 768px) {
-    #content{
+    .content_validated{
         width: 100%;
     }
 }
