@@ -39,11 +39,6 @@ if (isset($_GET['title'])) {
     $count = 0;
     if ($row_count > 0) {
         while ($row = $sth->fetch(PDO::FETCH_BOTH)) {
-            // $aux = str_replace(',', '', $row['book_review']);
-            // $aux1 = str_replace('"', '', $aux);
-            $all_data .= $row['book_name'] . ',' . $row['book_author'] . ',' . $row['book_genre'] . "\n";
-            $response = "data:text/csv;charset=UTF-8, book_name,book_author,book_genre,\n";
-            $response .= $all_data;
             echo "<div class='article-box'>";
             echo "<h3 class='book-name'>" . "Book : " . $row['book_name'] . "</h3>";
             echo "<p class='book-author'>" . "Author : " . $row['book_author'] . "</p>";
@@ -70,11 +65,6 @@ if (isset($_GET['title'])) {
         $sth1->execute();
         $i = 6;
         while ($row = $sth1->fetch(PDO::FETCH_BOTH)) {
-            // $aux = str_replace(',', '', $row['book_review']);
-            // $aux1 = str_replace('"', '', $aux);
-            $all_data .= $row['book_name'] . ',' . $row['book_author'] . ',' . $row['book_genre'] . "\n";
-            $response = "data:text/csv;charset=UTF-8, book_name,book_author,book_genre\n";
-            $response .= $all_data;
             echo "<div class='article-box'>";
             echo "<h3 class='book-name'>" . "Book : " . $row['book_name'] . "</h3>";
             echo "<p class='book-author'>" . "Author : " . $row['book_author'] . "</p>";
@@ -94,7 +84,4 @@ if (isset($_GET['title'])) {
             }
         }
     }
-    echo '<div class="export-cont">';
-    echo '<a class="export-dat" href="' . $response . '" download="export.csv">Download all conten from this page</a>';
-    echo '</div>';
 }
