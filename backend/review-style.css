@@ -114,3 +114,26 @@
 .more {
   display: none;
 }
+.export-dat {
+  background-color: #ffbb54;
+  color: white;
+  padding: 1em 1.5em;
+  border-radius: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.export-dat:hover {
+  background-color: #ff8147;
+}
+
+.export-dat:active {
+  background-color: rgb(255, 221, 72);
+}
+
+.export-cont {
+  margin-top: 3em;
+  margin-bottom: 1.5em;
+  display: flex;
+  justify-content: start;
+}
