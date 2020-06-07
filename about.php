@@ -3,6 +3,7 @@
 
 <head>
     <title>BoRe</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="./images/favicon_browser.png" />
     <link rel="stylesheet" type="text/css" href="assets/css/header.css">
     <link rel="stylesheet" type="text/css" href="assets/css/footer.css">

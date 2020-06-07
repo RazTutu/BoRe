@@ -3,6 +3,9 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
+$sliderValue = 0;
+$number_of_pages = 0;
+
 $msg = "";
 //if upload button is pressed
 if (isset($_POST['upload'])) {
