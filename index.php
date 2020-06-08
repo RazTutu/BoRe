@@ -79,7 +79,7 @@
     </section>
 
 
-    <section class = "horizontalSection middlePoz">
+    <section>
         <?php
       //code used to get the last 5 images inserted in the database
       $db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
@@ -87,10 +87,11 @@
       $sth = $db->prepare($sql);
       $sth->execute();
       
-      $i = 10;
+      $i = 6;
       //explanation: at every iteration we extract the image and the text from the db
       //and we fill a div with the id img_div with it
       //use PDO and prepare statements to avoid sql injection
+      echo "<p class = 'last_books_text'> The last six books reviewed are: <p>";
       echo "<div class='top_five_parent'>";
       while($row = $sth->fetch(PDO::FETCH_BOTH)){
           echo "<div class='top_five_layout'>";

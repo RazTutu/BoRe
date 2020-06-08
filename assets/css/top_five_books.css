@@ -1,35 +1,45 @@
 .top_five_layout{
     height: 20em;
-    width: 10%;
+    width: 12vw;
 }
 
 .top_five_image{
-    height: 13em;
+    height: 10em;
     width: 10em;
 }
 
 .top_five_parent{
     margin-top: 2em;
     display: flex;
-    flex-flow: row wrap;
-    align-content: space-between;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
+.last_books_text{
+    text-indent: 3vw;
+}
 
 @media screen and (min-width: 1000px) and (max-width: 1300px) {
-    #top_five_layout {
-        width: 20%;
+    .top_five_layout {
+        width: 20vw;
     }
 }
 
 @media screen and (max-width: 1000px) {
-    #top_five_layout {
-        width: 33%;
+    .top_five_layout {
+        width: 25vw;
     }
 }
 
 @media screen and (max-width: 700px) {
-    #top_five_layout {
-        width: 50%;
+    .top_five_layout {
+        width: 30vw;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .top_five_layout {
+        width: 50vw;
     }
 }
