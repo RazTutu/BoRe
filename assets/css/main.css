@@ -168,11 +168,11 @@
   }
 }
 
-
 .horizontalSection_statistics{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-left: 3em;
 }
 
 .nodotlist{
@@ -347,4 +347,14 @@
 .middlePoz{
   display: flex;
   justify-content: center;
+}
+
+.quote_greeting{
+  text-indent: 3vw;
+  margin-bottom: 1em;
+}
+
+.ranking-image{
+  width: 10em;
+  height: 12em;
 }

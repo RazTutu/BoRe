@@ -111,7 +111,7 @@
       ?>
     </section>
 
-    <section class = "verticalSection">
+    <!-- <section class = "verticalSection">
       <section  class="horizontalSection_statistics">
           <div class="statistics">      
           <p class="statistics_text">
@@ -122,40 +122,75 @@
               <img src="https://picsum.photos/1700/200" alt="placeholderImage" class= "info">
           </div>
       </section>
-    </section>
+    </section> -->
 
     <section class = "verticalSection">
-      <section  class="horizontalSection_statistics">
-         <div class="quotes">
-              <img src="https://picsum.photos/100/200" alt="placeholderImage" id="personalityPortret">
-              <ul class = "nodotlist">
-                  <li>
-                      <p class="quotewrt">
-                      “In three words I can sum up everything I've learned about life: it goes on.”
-                      </p>
-                  </li>
-                  <li>
-                      <p class="quotewrt">Robert Frost</p>
-                  </li>
-              </ul>
+        <p class = "quote_greeting">How about some insightful quotes? Here are some of our favourite: </p>
+        <section  class="horizontalSection_statistics">
+         
+            <div>
+                <div>
+                    <img class ="ranking-image" src="images/George_R._R._Martin.jpg" alt="placeholderImage">
+                    <p class="ranking-quote">“Sleep is good, he said, and books are better.”</p>
+                    <p class="ranking-name">George R.R. Martin</p>
+                </div>
+            </div>
 
-          </div>
+            <script type="text/javascript">
+            var count1 = 1;
+            var count2 = 1;
+            var count3 = 1;
+            
+            var images = [];
+            images[0] = "images/George_R._R._Martin.jpg"
+            images[1] = "images/Charles_W._Eliot.jpg"
+            images[2] = "images/Jane Smiley.jpg"
+            images[3] = "images/IsabelAllende.jpg"
+            images[4] = "images/J.K. Rowling.jpg"
+            images[5] = "images/Carl Sagan.jpg"
+            images[6] = "images/Neil Gaiman.jpg"
+            images[7] = "images/E.B. White.jpg"
+            images[8] = "images/Charles Baudelaire.jpg"
+            
+            var names = ['George R.R. Martin', 'Charles W. Eliot', 'Jane Smiley', 'Isabel Allende', 'J.K. Rowling', 'Carl Sagan',  'Neil Gaiman', 'E.B. White', 'Charles Baudelaire'];
+            var quotes = ['“Sleep is good, he said, and books are better.”','“Books are the quietest and most constant of friends; they are the most accessible and wisest of counselors, and the most patient of teachers.”','“Many people, myself among them, feel better at the mere sight of a book.”','“The library is inhabited by spirits that come out of the pages at night.”','“If you don’t like to read, you haven’t found the right book.”','“One glance at a book and you hear the voice of another person, perhaps someone dead for 1,000 years. To read is to voyage through time.”','“Fairy tales are more than true: not because they tell us that dragons exist, but because they tell us that dragons can be beaten.”','“Books are good company, in sad times and happy times, for books are people – people who have managed to stay alive by hiding between the covers of a book.”','“A book is a garden, an orchard, a storehouse, a party, a company by the way, a counselor, a multitude of counselors.”'];
+            
+            
+            var quotesContainer = document.getElementsByClassName('ranking-quote');
+            var namesContainer = document.getElementsByClassName('ranking-name');
+            var imagesContainer = document.getElementsByClassName("ranking-image");
 
-          <div class= "updates">
-              <div class="update__comp">
-                  <p>Postarile colegilor: </p>
-                  <p>Radu Macarof: ,,Crima din Orient Express" de Agatha Cristie</p>
-                  <p>Razvan Tutuianu: ,,Crima si pedeapsa" de Fyodor Dostoyevsky</p>
-                  <p>Andrei Patrascan: ,,Fizica cuantica pentru gradinita" de Arthur Smith</p>
-              </div>
-
-              <div class="update__comp">
-                  <p>Review-urile colegilor: </p>
-                  <p>Radu Macarof(,,Crima din Orient Express" de Agatha Cristie): ,,Palpitant!"</p>
-                  <p>Razvan Tutuianu(,,Crima si pedeapsa" de Fyodor Dostoyevsky): ,,Minunat scrisa"</p>
-                  <p>Andrei Patrascan(,,Fizica cuantica pentru gradinita" de Arthur Smith): ,,Prea greu materialul"</p>
-              </div>
-           </div>
+            setInterval(function(){
+                for(var i = 0; i<8; i++){
+                imagesContainer[i].src= images[count3];
+                count3++;
+                if(count3 == images.length){
+                    count3 = 0;
+                };
+                }
+            }, 3000);
+            
+            
+            setInterval(function(){
+                for(var i = 0; i<8; i++){
+                quotesContainer[i].innerHTML= quotes[count1];
+                count1++;
+                if(count1 == quotes.length){
+                    count1 = 0;
+                };
+                }
+            }, 3000);
+            
+            setInterval(function(){
+                for(var i = 0; i<8; i++){
+                namesContainer[i].innerHTML =names[count2];
+                count2++;
+                if(count2 == names.length){
+                    count2 = 0;
+                };
+                }
+            }, 3000);
+            </script>
       </section>
     </section>
 
