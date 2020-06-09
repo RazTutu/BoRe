@@ -37,7 +37,7 @@
 
 
     <?php
-        include('body-contact.html');
+        include('body-contact.php');
     ?>
     
     </main>
