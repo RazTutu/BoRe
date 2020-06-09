@@ -137,3 +137,208 @@
   display: flex;
   justify-content: start;
 }
+.col-for-subscribe {
+  float: left;
+  width: 100%;
+
+  margin-top: 6px;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  justify-content: center;
+}
+input[type="submit"] {
+  background-color: #ffbb54;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  border: none;
+  padding: 1em;
+  font-family: serif;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+input[name="join"],
+.btn {
+  padding: 1em;
+  border: none;
+  display: inline-block;
+  font-size: 1em;
+  line-height: 2em;
+  text-decoration: none; /* remove underline from anchors */
+  background-color: rgb(223, 210, 153);
+  color: white;
+  font-style: italic;
+  width: 63%;
+}
+input[name="create"],
+.btn {
+  padding: 1em;
+  border: none;
+  display: inline-block;
+  font-size: 1em;
+  line-height: 2em;
+  text-decoration: none; /* remove underline from anchors */
+  background-color: rgb(223, 210, 153);
+  color: white;
+  font-style: italic;
+  width: 67%;
+}
+
+.first-part-with-classes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.join-class {
+  width: 100%;
+}
+.output {
+  text-align: center;
+  text-transform: uppercase;
+  color: #4caf50;
+  font-family: monospace;
+}
+.second-part-with-classes {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  padding: 2em 0;
+}
+.contanter-for-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.question-about-classes {
+  font-family: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text";
+  font-size: 3em;
+  padding: 0 0.3em;
+}
+.answer-about-classes {
+  width: 95%;
+  display: flex;
+  align-self: center;
+}
+.message-welcome {
+  display: flex;
+  align-self: center;
+}
+.message-welcome2 {
+  display: flex;
+  align-self: center;
+}
+
+.all-content {
+  display: flex;
+  flex-direction: column;
+}
+.answer {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: oblique;
+  line-height: 27px;
+}
+.photo-for-first-part {
+  border-radius: 10px;
+}
+.third-part-with-classes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 2em 0;
+}
+.create-class {
+  width: 100%;
+}
+.place-holder-img-group {
+  padding: 0 1em;
+}
+
+@media screen and (max-width: 1225px) {
+  .photo-for-first-part {
+    width: 450px;
+    height: 400px;
+  }
+  .question-about-classes {
+    font-size: 2em;
+  }
+  input[name="create"],
+  .btn {
+    width: 50%;
+  }
+  input[name="join"],
+  .btn {
+    width: 50%;
+  }
+  .answer {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 1035px) {
+  .second-part-with-classes {
+    flex-direction: column;
+    align-items: center;
+  }
+  .photo-for-first-part {
+    width: 44em;
+    height: 31em;
+  }
+  .col-for-subscribe {
+    padding: 1em 0;
+  }
+  input[name="create"],
+  .btn {
+    width: 66%;
+  }
+  input[name="join"],
+  .btn {
+    width: 63%;
+  }
+  .third-part-with-classes {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 910px) {
+  .photo-for-first-part {
+    width: 34em;
+    height: 21em;
+  }
+}
+@media screen and (max-width: 740px) {
+  input[name="create"],
+  .btn {
+    width: 56%;
+  }
+  input[name="join"],
+  .btn {
+    width: 48%;
+  }
+  .photo-for-first-part {
+    width: 25em;
+    height: 16em;
+  }
+  .answer {
+    font-size: 0.7em;
+    width: 70%;
+    align-self: center;
+  }
+  .answer-about-classes {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 430px) {
+  .photo-for-first-part {
+    width: 18em;
+    height: 10em;
+  }
+  input[name="create"],
+  .btn {
+    width: 46%;
+  }
+  input[name="join"],
+  .btn {
+    width: 38%;
+  }
+}
