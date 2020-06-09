@@ -21,7 +21,6 @@
         <img src="https://img.icons8.com/carbon-copy/100/000000/close-window.png" alt="close register form" class="closeRegister"/>
         <img src="./images/loading.gif" class="imge" alt="gif happy book"/>
         <form action="index.php?logout='1'" method="POST">
-            <?php include('./backend/errors.php'); ?> 
             <input type="email" placeholder="Email" class="inputLoginForm" name="email" required>
             <input type="text" placeholder="Username" class="inputLoginForm" name="username" required>
             <input type="password" placeholder="Password" class="inputLoginForm" name="password_1" required>
@@ -62,5 +61,8 @@
 <script>
     document.getElementById("popup-register2").addEventListener("click",function(){
         document.querySelector(".popup-register").style.display = "flex";
+    })
+    document.querySelector(".closeRegister").addEventListener("click", function(){
+        document.querySelector(".popup-register").style.display = "none";
     })
 </script>

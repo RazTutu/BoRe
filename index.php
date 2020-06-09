@@ -209,7 +209,9 @@
 ?>
 
 <div id="loading">
-    <img src="images/loading.gif" class="bookGif" alt="loading screen happy book gif">
-</div>
+    <div class="loading_image">
+        <img src="images/loading.gif" class="bookGif" alt="loading screen happy book gif">
+    </div>
+</div> 
 </body>
 </html>
