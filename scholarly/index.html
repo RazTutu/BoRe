@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>BookReviewer Scholarly</title>
+    <link rel="stylesheet" href="css/scholarly.min.css">
+    <script src="js/scholarly.min.js"></script>
+  </head>
+  <body prefix="schema: http://schema.org">
+    <header>
+      <div class="banner">
+        <img src="scholarly-html.svg" width="227" height="50" alt="Scholarly HTML logo">
+        <div class="status">Community Draft</div>
+      </div>
+      <h1>Book Reviewer</h1>
+    </header>
+    <!--
+      XXX
+      - check refs
+      - the math example has too much maths
+      - bring back some of the old style
+      - make semantics, validation, processing sub-sections of each structural element
+      - have a section before that for general constructs
+        - explain why use RDFa
+        - explain our patterns: RDFa, roles
+      - figure captions need to get set throughout
+      - dedication? see doc-dedication
+      - syntactic constraints (prefix)
+      - needs more sthenurines
+      - examples of everything
+      - some notes on using Semantic CSS
+      - needs more RDFa in the spec itself
+    -->
+    <div role="contentinfo">
+      <dl>
+        <dt>Autori</dt>
+        <dd>
+          <a href="#">Radu Macarof</a>,
+          <a href="#">Patrascan Andrei</a>
+          &amp;
+          <a href="#">Tutuianu Razvan</a>
+        </dd>
+        <dt>Bugs &amp; Feedback</dt>
+        <dd>
+          <a href="https://github.com/RazTutu/BoRe/commits/master">Problemele intampinate se gasesc in mesajele de commit</a>
+        </dd>
+        <dt>License</dt>
+        <dd>
+          <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a>
+        </dd>
+      </dl>
+    </div>
+    <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
+      <h2>Cerinta proiectului</h2>
+      <p>
+        Se doreste crearea unei aplicatii Web care permite specificarea progresului si exprimarea opiniilor/adnotarilor
+        referitoare la lecturile realizate de o persoana sau grup de persoane (e.g. o clasa de elevi, club de lectura).
+        Sistemul va realiza managementul cartilor parcurse, inclusiv organizarea lor pe diverse criterii: categorie,
+        autor, editura, an, editie, legaturi cu alte carti inrudite etc. Se vor oferi statistici diverse ce pot fi
+        exportate în formate deschise (minimal, CSV si DocBook). Diversele anunturi (o persoana a recenzat o carte, a aparut un alt 
+        volum de interes, modificarea clasamentului celor mai apreciate lucrari dintr-un anumit domeniu etc.) 
+        vor fi expuse ca flux de stiri RSS.
+        Inspiratie: Good Reads.
+      </p>
+    </section>
+    <section id="introduction" role="doc-introduction">
+      <!-- review? -->
+      <h2>Tehnologii folosite</h2>
+      <p>
+        
+      </p>
+      <p>
+        Pentru realizarea website-ului BookReviewer s-au folosit HTML/CSS pentru a structura si stiliza paginile.
+        S-a pus accent si pe cod CSS responsiv, avand ca scop crearea unei experiente placute si pentru utilizatorii
+        de telefoane mobile. De asemenea codul a fost validat conform <a href="https://validator.w3.org/" target="_blank">validator.w3.org.</a>
+        Pentru interactiunile dinamice ale website-ului s-a folosit Javascript, iar pentru partea de lucru cu serverul si baza de date s-au folosit
+        PHP si MySql. Tehnologia AJAX a fost de asemenea aleasa pentru a putea oferi utilizatorilor in timp real reviews ale cartilor din baza de date.
+      </p>
+    </section>
+    <section id="structure">
+      <!-- review? -->
+      <h2>Structura website-ului</h2>
+      <p>
+        Website-ul contine 3 pagini(Main, About, Contact) publice oricarui utilizator fara cont, 
+        3 pagini(Write a review, Classes, List of reviews) pentru utilizatorii obisnuiti care au cont si sunt logati, 
+        utilizatorul administrator avand inca o pagina(Admin) in plus.
+      </p>
+      <section id="Root">
+        <!-- review? -->
+        <h3>Pagina principala</h3>
+        <p>
+          Pe aceasta pagina se gasesc campurile de login si register, o statistica din baza de date, ultimele reviews
+          adaugate pe website, imagini si text reprezentativ incluzand carti, flux RSS.
+        </p>
+      </section>
+      <section id="article">
+        <!-- review? -->
+        <h3>Pagina About</h3>
+        <p>
+          In about se gasesc informatii despre continutul website-ului, tehnologiile folosite, si echipa ce a lucrat la proiect.
+        </p>
+      </section>
+      <section id="hunk">
+        <!-- review? -->
+        <h3>Pagina Contact</h3>
+        <p>
+          Folosind pagina de contact, un utilizator poate vedea pe o harta google maps locatia principala a echipei.
+          De asemenea, in aceasta pagina este prezent un formular de contact prin care se poate contacta echipa.
+        </p>
+      
+      </section>
+     
+      <section id="references">
+        <!-- review? -->
+        <h3>Login/Register</h3>
+        <p>
+          Se pot observa doua butoane pe pagina principala, unul de login si altul de register. Daca utilizatorul apasa
+          butonul de login, va aparea un popup in care i se va cere username-ul si parola. In caz de trimite cererea
+          catre server fara a completa unul dintre campuri, ii va aparea o notificare in care i se va cere sa completeze tot.
+          Daca datele nu se potrivesc cu cele din baza de date, acesta nu va fi conectat.
+        </p>
+        <p>
+          Butonul de register va deschide un popup mai mare, unde se va cere ca input email-ul utilizatorului, username-ul,
+          parola si confirmarea parolei. La fel ca la login, necompletarea unuia dintre campuri va produce un mic popup de eroare.
+          De asemenea, campul email trebuie sa fie valid, adica sa contina caracterul "@".
+        </p>
+        <!-- XXX add references to sem as well as CSS to rearrange order based on citation format -->
+      </section>
+
+      <section id="interactive">
+        <!-- review? -->
+        <h3>Postare de Review/Progress</h3>
+        <p>
+          Odata logat, utilizatorul va putea intra pe pagina "Write a review", unde va putea adauga un review unei carti citite de acesta.
+          Pentru a adauga un review, vor trebui completate campurile ce necesita urmatoarele date: numele cartii, autorul acesteia, genul, review-ul
+          complet, si o imagine reprezentativa.
+        </p>
+        <p>
+          Exista de asemenea posibilitatea de salvare a progresului pentru o carte citita. Va trebui completat formularul
+          ce necesita numele cartii, numarul total de pagini, si pagina la care se afla cititorul momentan. Dupa ce acesta paraseste website-ul,
+          data viitoare cand se va loga va putea da update la numarl sau de pagini in caz de a mai citit ceva intre timp, folosind un progress bar ce se
+          afla in dreapta zonei de scriere progres.
+
+        </p>
+      </section>
+      <section id="HTMLRoles">
+        <!-- review? -->
+        <h3>Cautare reviews</h3>
+        <p>
+          Aflat pe pagina "List of reviews", se vor putea cauta in baza de date reviews pentru orice carte aflata pe website. Se pot face cautari si
+          dupa autor, gen, sau reviews personale. Aceasta pagina foloseste AJAX pentru a afisa datele in timp real, fara a mai fi nevoie
+          de o reactualizare a paginii. Toate review-urile ce apar sunt afisate initial in aceeasi dimensiune, iar daca se va dori vizualizarea unui review complet
+          se va folosi butonul "show more" pentru a mari chenarul acestuia, in care va fi afisat tot continutul sau.
+        </p>
+      </section>
+      <section id="validate">
+        <!-- review? -->
+        <h3>Clase/Grupuri de utilizatori</h3>
+        <p>
+          Prin pagina "Classes", utilizatorul va putea forma grupuri cu alti membrii ai website-ului, dezvoltand un mic grup de lectura, 
+          o zona unde fiecare poate afla detalii despre ce citeste celalalt.
+        </p>
+      </section>
+
+      <section id="validate2">
+        <!-- review? -->
+        <h3>Pagina administratorului</h3>
+        <p>
+         Daca persoana logata are drepturi de administrator, acesteia ii va aparea o pagina in plus, cea prin care poate administra 
+         website-ul. Pe acea pagina va putea sa vada doua statistici, una cu cei mai populari 10 useri dupa numarul de reviews adaugate,
+         si una cu cele mai populare 10 carti dupa numarul de aparitii in tabela cu progres din baza de date.
+        </p>
+        <p>
+          De asemenea administratorul va putea da drepturi de admin altui utilizator, va putea sterge un utilizator, si sa stearga un review de pe website.
+          Acesta mai are si optiunea de a descarca in format csv statistici despre cartile din baza de date sau detalii despre utilizatori.
+         </p>
+      </section>
+    </section>
+    <section id="semantics">
+      <!-- review? -->
+      <h2>Schema bazei de date</h2>
+      
+      
+      
+      
+        <!--
+          XXX needs rewrite, Dave doesn’t understand, ergo no one will
+          DC suggests contrasting two examples: one in which I am eternally indentured to the
+          Illuminati, versus one in which I am just a hired gun.
+        -->
+    
+        <p>
+          Pentru a stoca utilizatorii, review-urile, si in mare parte orice date ale utilizatorului trimise de acesta ca input,
+          am folosit urmatoarea schema, avand la baza limbajul MySql:
+        </p>
+        <figure typeof="schema:SoftwareSourceCode" resource="#role-example" id="role-example">
+          <pre>
+<a href="#">schema:BookReviewer</a>
+    └─<a>Tabel:users</a>
+      ├─<a>username: varchar(30) PK</a>
+      ├─<a>email: varchar(45) PK</a>
+      ├─<a>password: varchar(45)</a>
+      └─<a>is_admin: int(11)</a>
+    └─<a>Tabel:book_reviews</a>
+      ├─<a>book_id: int(11) AI PK</a>
+      ├─<a>username: varchar(30)</a>
+      ├─<a>book_name: varchar(50)</a>
+      ├─<a>book_author: varchar(40)</a>
+      ├─<a>book_genre: varchar(50)</a>
+      ├─<a>book_review: mediumtext</a>
+      └─<a>book_image: varchar(200)</a>
+    └─<a>Tabel:book_progress</a>
+      ├─<a>id: int(11) AI PK</a>
+      ├─<a>username: varchar(45)</a>
+      ├─<a>book_name: varchar(45)</a>
+      ├─<a>number_of_pages: int(11)</a>
+      ├─<a>current_page: int(11)</a>
+      └─<a>progress_Date: datetime</a>
+          </pre>
+        </figure>
+    </section>
+    <section id="scholarly-article">
+      <!-- review? -->
+      <h2>Cum se instaleaza website-ul</h2>
+      <p>
+        Website-ul poate fi vizualizat pe masina proprie, localhost, sau poate fi incarcat pe un host 
+        pentru a fi live 24/24.
+      </p>
+      <p>
+        Pentru a hosta pe masina proprie, aveti nevoie de XAMPP. Acest program va simula un server in interiorul computerului.
+        Trebuie sa intrati in program si sa porniti Apache si MySql.
+        De asemenea, descarcati codul de pe <a href="https://github.com/RazTutu/BoRe">GitHub</a>, si puneti-l in fisierul 
+        htdocs din folderul unde este instalat XAMPP. Apoi deschideti un browser si scrieti in bara de cautare "localhost",
+        sau adresa IP-ului local pe care il aveti.
+      </p>
+      <p>
+        Pentru a fi disponibil 24/24 pentru orice utilizator, website-ul trebuie hostat. Pentru aceasta exista diverse metode, cea pe care 
+        o folosim noi este prin programul FileZilla. Ca provider folosim <a href="https://www.000webhost.com/">000webhost</a>, unde putem obtine 
+        un host si un domeniu gratuit(avand diverse limitari). Trebuie sa intrati pe 000webhost, va faceti un cont, creati un nou website, 
+        luati informatiile necesare pentru a va conecta prin FileZilla, va conectati, si apoi dati copy paste din computerul vostru in fisierul de pe host 
+        la codul pe care l-ati descarcat de pe github. 000webhost va crea un website ce functioneaza 24/24 cu website-ul incarcat.
+      </p>
+    </section>
+    <section id="hypermedia">
+      <!-- review? -->
+      <h2>Link github si adresa live a website-ului</h2>
+      <p>
+        Pentru a arunca o privire la cod, puteti intra pe <a href="https://github.com/RazTutu/BoRe">GitHub</a>.
+      </p>
+      <p>De asemenea, avem o adresa unde site-ul este functional 24/24, pe <a href="http://bookreviewtw.000webhostapp.com/">bookreviewtw</a>.</p>
+    </section>
+    <section id="processing-model">
+      <!-- review? -->
+      <h2>Video - prezentarea website-ului</h2>
+      <p>
+        In curand.
+      </p>
+    </section>
+    <section id="acks">
+      <!-- review? -->
+      <h2>Bibliografie</h2>
+      <p><a href="https://www.geeksforgeeks.org/how-to-display-logged-in-user-information-in-php/" target="_blank">How to display logged in user information in php</a></p>
+      <p><a href="https://www.youtube.com/watch?v=aEm0BN493sU&t" target="_blank">How to make a MySql connection using Heroku</a></p>
+      <p><a href="https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery/piechart.html" target="_blank">Google Charts</a></p>
+    </section>
+  </body>
+</html>
