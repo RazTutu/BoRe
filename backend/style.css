@@ -71,7 +71,7 @@ body {
     position: static;
   }
   .label {
-    display: none;
+    padding: 0 1em;
   }
   .container {
     flex-direction: column;
