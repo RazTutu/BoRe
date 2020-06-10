@@ -5,7 +5,7 @@
     <div class="chat_container">
         <?php
         $group_name_1 = $_SESSION['option'];
-        $sql = "SELECT * FROM (SELECT * from group_messages WHERE group_name LIKE BINARY '%$group_name_1%'  order by date desc limit 30) as T order by date;";
+        $sql = "SELECT * FROM (SELECT * from group_messages WHERE group_name LIKE BINARY '%$group_name_1%'  order by date desc limit 15) as T order by date;";
         $sth = $db->prepare($sql);
         $sth->execute();
         $row_count = $sth->rowCount();

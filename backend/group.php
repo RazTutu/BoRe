@@ -27,6 +27,7 @@ $option = $_SESSION['option']; ?>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" type="text/css" href="review-style.css">
     <link rel="stylesheet" href="chat_style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
     <title>Group</title>
 </head>
 

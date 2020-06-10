@@ -37,8 +37,30 @@
   display: inline-block;
   width: 60%;
 }
-@media screen and (max-width: 1415x) {
-  .chat_emvelop {
+@media screen and (max-width: 1415px) {
+  .chat_container {
     position: relative;
+    width: 70%;
+    height: 100%;
+  }
+  .chat_emvelop {
+    width: 70%;
+    height: 100%;
+    position: relative;
+  }
+  .cont-for-responsive-page {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+@media screen and (max-width: 600px) {
+  .chat_container {
+    width: 85%;
+    height: 100%;
+  }
+  .chat_emvelop {
+    width: 85%;
+    height: 100%;
+    align-self: center;
   }
 }
