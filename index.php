@@ -1,36 +1,42 @@
 <?php include('./backend/server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>BookReviewer</title>
-        <meta name="viewport" content="width=device-width ,initial-scale=1.0"/>
-        <link rel="shortcut icon" type="image/png" href="./images/favicon_browser.png"/>
-        <meta name="description" content="Add book reviews so you can read them whenever you want.">
-        <link rel="stylesheet" type="text/css" href="assets/css/header.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/footer.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/popUps.css">
-        <script src="assets/js/loadingScreen.js"></script>
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/loadingScreen.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        
-        <link rel="stylesheet" type="text/css" href="assets/css/top_five_books.css">
-        <style>
-     
+
+<head>
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0" />
+    <title>BookReviewer</title>
+    <link rel="shortcut icon" type="image/png" href="./images/favicon_browser.png" />
+    <meta name="description" content="Add book reviews so you can read them whenever you want.">
+    <link rel="stylesheet" type="text/css" href="assets/css/header.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/popUps.css">
+    <script src="assets/js/loadingScreen.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/loadingScreen.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/top_five_books.css">
+    <style>
+
     </style>
-    </head>
+</head>
+
 <body class="body">
- 
+    <div id="loading">
+        <div class="loading_image">
+            <img src="images/loading.gif" class="bookGif" alt="loading screen happy book gif">
+        </div>
+    </div>
     <div class="header">
 
-    <?php
+        <?php
         include('header.html');
-    ?>
+        ?>
 
     </div>
 
@@ -119,94 +125,91 @@
       </section>
     </section> -->
 
-    <section class = "verticalSection">
-        <p class = "quote_greeting">How about some insightful quotes? Here are some of our favourite: </p>
-        <section  class="horizontalSection_statistics">
-         
-            <div>
-                <div>
-                    <img class ="ranking-image" src="images/George_R._R._Martin.jpg" alt="placeholderImage">
-                    <p class="ranking-quote">“Sleep is good, he said, and books are better.”</p>
-                    <p class="ranking-name">George R.R. Martin</p>
-                </div>
-            </div>
+            <section class="verticalSection">
+                <p class="quote_greeting">How about some insightful quotes? Here are some of our favourite: </p>
+                <section class="horizontalSection_statistics">
 
-            <script type="text/javascript">
-            var count1 = 1;
-            var count2 = 1;
-            var count3 = 1;
-            
-            var images = [];
-            images[0] = "images/George_R._R._Martin.jpg"
-            images[1] = "images/Charles_W._Eliot.jpg"
-            images[2] = "images/Jane Smiley.jpg"
-            images[3] = "images/IsabelAllende.jpg"
-            images[4] = "images/J.K. Rowling.jpg"
-            images[5] = "images/Carl Sagan.jpg"
-            images[6] = "images/Neil Gaiman.jpg"
-            images[7] = "images/E.B. White.jpg"
-            images[8] = "images/Charles Baudelaire.jpg"
-            
-            var names = ['George R.R. Martin', 'Charles W. Eliot', 'Jane Smiley', 'Isabel Allende', 'J.K. Rowling', 'Carl Sagan',  'Neil Gaiman', 'E.B. White', 'Charles Baudelaire'];
-            var quotes = ['“Sleep is good, he said, and books are better.”','“Books are the quietest and most constant of friends; they are the most accessible and wisest of counselors, and the most patient of teachers.”','“Many people, myself among them, feel better at the mere sight of a book.”','“The library is inhabited by spirits that come out of the pages at night.”','“If you don’t like to read, you haven’t found the right book.”','“One glance at a book and you hear the voice of another person, perhaps someone dead for 1,000 years. To read is to voyage through time.”','“Fairy tales are more than true: not because they tell us that dragons exist, but because they tell us that dragons can be beaten.”','“Books are good company, in sad times and happy times, for books are people – people who have managed to stay alive by hiding between the covers of a book.”','“A book is a garden, an orchard, a storehouse, a party, a company by the way, a counselor, a multitude of counselors.”'];
-            
-            
-            var quotesContainer = document.getElementsByClassName('ranking-quote');
-            var namesContainer = document.getElementsByClassName('ranking-name');
-            var imagesContainer = document.getElementsByClassName("ranking-image");
+                    <div>
+                        <div>
+                            <img class="ranking-image" src="images/George_R._R._Martin.jpg" alt="placeholderImage">
+                            <p class="ranking-quote">“Sleep is good, he said, and books are better.”</p>
+                            <p class="ranking-name">George R.R. Martin</p>
+                        </div>
+                    </div>
 
-            setInterval(function(){
-                for(var i = 0; i<8; i++){
-                imagesContainer[i].src= images[count3];
-                count3++;
-                if(count3 == images.length){
-                    count3 = 0;
-                };
-                }
-            }, 3000);
-            
-            
-            setInterval(function(){
-                for(var i = 0; i<8; i++){
-                quotesContainer[i].innerHTML= quotes[count1];
-                count1++;
-                if(count1 == quotes.length){
-                    count1 = 0;
-                };
-                }
-            }, 3000);
-            
-            setInterval(function(){
-                for(var i = 0; i<8; i++){
-                namesContainer[i].innerHTML =names[count2];
-                count2++;
-                if(count2 == names.length){
-                    count2 = 0;
-                };
-                }
-            }, 3000);
-            </script>
-      </section>
-    </section>
+                    <script type="text/javascript">
+                        var count1 = 1;
+                        var count2 = 1;
+                        var count3 = 1;
 
-  </section>
-</main>
+                        var images = [];
+                        images[0] = "images/George_R._R._Martin.jpg"
+                        images[1] = "images/Charles_W._Eliot.jpg"
+                        images[2] = "images/Jane Smiley.jpg"
+                        images[3] = "images/IsabelAllende.jpg"
+                        images[4] = "images/J.K. Rowling.jpg"
+                        images[5] = "images/Carl Sagan.jpg"
+                        images[6] = "images/Neil Gaiman.jpg"
+                        images[7] = "images/E.B. White.jpg"
+                        images[8] = "images/Charles Baudelaire.jpg"
+
+                        var names = ['George R.R. Martin', 'Charles W. Eliot', 'Jane Smiley', 'Isabel Allende', 'J.K. Rowling', 'Carl Sagan', 'Neil Gaiman', 'E.B. White', 'Charles Baudelaire'];
+                        var quotes = ['“Sleep is good, he said, and books are better.”', '“Books are the quietest and most constant of friends; they are the most accessible and wisest of counselors, and the most patient of teachers.”', '“Many people, myself among them, feel better at the mere sight of a book.”', '“The library is inhabited by spirits that come out of the pages at night.”', '“If you don’t like to read, you haven’t found the right book.”', '“One glance at a book and you hear the voice of another person, perhaps someone dead for 1,000 years. To read is to voyage through time.”', '“Fairy tales are more than true: not because they tell us that dragons exist, but because they tell us that dragons can be beaten.”', '“Books are good company, in sad times and happy times, for books are people – people who have managed to stay alive by hiding between the covers of a book.”', '“A book is a garden, an orchard, a storehouse, a party, a company by the way, a counselor, a multitude of counselors.”'];
 
 
-<footer class="mainFooter ">
-<?php
-        include('footer.html');
-?>
-</footer>
+                        var quotesContainer = document.getElementsByClassName('ranking-quote');
+                        var namesContainer = document.getElementsByClassName('ranking-name');
+                        var imagesContainer = document.getElementsByClassName("ranking-image");
 
-<?php
-        include('popUps.php');
-?>
+                        setInterval(function() {
+                            for (var i = 0; i < 8; i++) {
+                                imagesContainer[i].src = images[count3];
+                                count3++;
+                                if (count3 == images.length) {
+                                    count3 = 0;
+                                };
+                            }
+                        }, 3000);
 
-<div id="loading">
-    <div class="loading_image">
-        <img src="images/loading.gif" class="bookGif" alt="loading screen happy book gif">
-    </div>
-</div> 
+
+                        setInterval(function() {
+                            for (var i = 0; i < 8; i++) {
+                                quotesContainer[i].innerHTML = quotes[count1];
+                                count1++;
+                                if (count1 == quotes.length) {
+                                    count1 = 0;
+                                };
+                            }
+                        }, 3000);
+
+                        setInterval(function() {
+                            for (var i = 0; i < 8; i++) {
+                                namesContainer[i].innerHTML = names[count2];
+                                count2++;
+                                if (count2 == names.length) {
+                                    count2 = 0;
+                                };
+                            }
+                        }, 3000);
+                    </script>
+                </section>
+            </section>
+
+        </section>
+    </main>
+
+
+    <footer class="mainFooter ">
+        <?php
+        include('footer.php');
+        ?>
+    </footer>
+
+    <?php
+    include('popUps.php');
+    ?>
+
+
 </body>
+
 </html>

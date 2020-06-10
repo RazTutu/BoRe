@@ -46,7 +46,7 @@
 
     <footer class="mainFooter ">
         <?php
-        include('footer.html');
+        include('footer.php');
         ?>
     </footer>
 

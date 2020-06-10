@@ -175,7 +175,6 @@ if (isset($_GET['logout'])) {
                 <div class="upload_review_button">
                 <input type="submit" name="upload_progress_form" value="Upload progress" class="button_style">
                 </div>
-
             </form>
         </div>
         <div class="last_progress">
