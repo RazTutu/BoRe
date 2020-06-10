@@ -84,11 +84,11 @@ where gu.group_name LIKE '%$option%'";
                         echo "<p class='rev'> - Review - </p>";
                         $len = strlen($row['book_review']);
                         if ($len > 200) {
-                            echo "<p class='review'>"  . substr($row['book_review'], 0, 200) . "<span class='dots'>...</span><span class='more'>" . substr($row['book_review'], 201, $len) . "</span>" . "</p>";
+                            echo "<p class='review'>"  . substr($row['book_review'], 0, 200) . substr($row['book_review'], 201, $len)  . "</p>";
                         } else {
-                            echo "<p class='review'>"  . substr($row['book_review'], 0, 200) . "<span class='dots'></span><span class='more'>" . substr($row['book_review'], 201, $len) . "</span>" . "</p>";
+                            echo "<p class='review'>"  . substr($row['book_review'], 0, 200) . substr($row['book_review'], 201, $len) . "</p>";
                         }
-                        echo "<button  class='myBtn'>Read more</button>";
+
                         echo "<p class='review'>" . 'username: ' . $row['username'] . "</p>";
                         echo "</div>";
                     }

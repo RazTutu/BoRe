@@ -81,91 +81,92 @@ if (isset($_POST['join'])) {
   $row_count_user = $sth->rowCount();
 
 
-  if($option != FALSE){
+  if ($option != FALSE) {
     echo '<script>window.location.href="group.php";</script>';
-  }
-  else{
-  echo '<div class="second-part-with-classes">';
-  echo ' <div class="contanter-for-text">';
-  echo ' <div class="message-welcome">';
-  echo  '<h1 class="question-about-classes">Nu esti parte din nicio clasa?</h1>';
-  echo '</div>';
-  echo '<div class="answer-about-classes">';
-  echo '<p class="answer">';
-  echo ' Alatura-te unei clase online, aici vei putea fi in contact cu alti pasionati de lectura care sunt interesati in aceleasi genuri de carti. Vei putea
-            dezbate alaturi de ei pe diferite teme, schimba parerei legate de carti sau chiar recomanda carti altor persoane.
-            Ramai conectat cu lume cartilor si socializeaza cu persoane interesante.';
-  echo ' </p>';
-  echo ' </div>';
-  echo '<div class="join-class">';
-  echo '<form method="post" class="join-class">';
-  echo   '<div class="col-for-subscribe">';
-  echo '<input type="text" name="join" placeholder="Scie numele grupului" required />';
-  echo '<input type="submit" value="Alatura-te grupului" />';
-  echo '</div>';
-  echo '</form>';
-  echo '</div>';
-
-  echo '</div>';
-  echo '<div class="place-holder-img-group">';
-  echo '<img src="../images/group.jpg" alt="image with a group" class="photo-for-first-part" height="500" width="600" />';
-  echo  '</div>';
-
-  echo '</div>';
-  echo '<div class="third-part-with-classes">';
-  echo '<div class="contanter-for-text">';
-  echo '<div class="message-welcome2">';
-  echo '<h1 class="question-about-classes">Nu ai creat nicio clasa?</h1>';
-  echo '</div>';
-  echo '<div class="answer-about-classes">';
-  echo '<p class="answer">';
-  echo 'Creaza o clasa online, aici vei putea socializa cu persoane ce au interes comun, discuta despre carti si nu numai.';
-  echo '</p>';
-  echo '</div>';
-  echo '<div class="create-class">';
-  echo '<form method="post" class="create-class">';
-  echo '<div class="col-for-subscribe">';
-  echo '<input type="text" name="create" placeholder="Scie numele grupului" required />';
-  echo '<input type="submit" value="Creaza grupul" />';
-  echo '</div>';
-  echo '</form>';
-  echo '</div>';
-
-  echo '</div>';
-  echo '<div class="place-holder-img-group">';
-  echo '<img src="../images/r-group.jpg" alt="image with a group" class="photo-for-first-part" height="500" width="600" />';
-  echo '</div>';
-  echo '</div>';
-  echo '<div class="first-part-opt">';
-  $sql = "SELECT DISTINCT group_name from group_users  WHERE username LIKE BINARY '%$username%'";
-  $sth = $db->prepare($sql);
-  $sth->execute();
-  $row_co = $sth->rowCount();
-  if ($row_co > 0) {
-    echo '<div class="secont-type-of-user-choese">';
-    echo '<h1 class="is-part-of">';
-    echo 'Esti parte dintr-o clasa deja?';
-    echo '</h1>';
-    echo '<p class="is-part-text">';
-    echo 'Atunci alege clasa pentru a putea comunica cu persoanele din interiorul clasei.';
-    echo '</p>';
+  } else {
+    echo '<div class="second-part-with-classes">';
+    echo ' <div class="contanter-for-text">';
+    echo ' <div class="message-welcome">';
+    echo  '<h1 class="question-about-classes">Not a part of any group?</h1>';
     echo '</div>';
-    echo '<div class="opt-class">';
-    echo '<form method="post" class="cob">';
-    echo '<select class="dropdown-for-classes" name="taskOption">';
-
-    while ($row = $sth->fetch(PDO::FETCH_BOTH)) {
-      echo "<option class='opt1'>";
-      echo $row['group_name'];
-      echo "</option>";
-    }
-
-    echo '</select>';
-    echo ' <input type="submit" value="Submit the form"/>';
+    echo '<div class="answer-about-classes">';
+    echo '<p class="answer">';
+    echo ' Join an online class, here you will be in contact with other 
+    reading enthusiasts interested in the same kinds of books. You will 
+    be able to debate with them on different topics, share your opinion about 
+    a novel you love or recommend books to other people. Stay connected with the world 
+    of written thought and talk with interesting people.';
+    echo ' </p>';
+    echo ' </div>';
+    echo '<div class="join-class">';
+    echo '<form method="post" class="join-class">';
+    echo   '<div class="col-for-subscribe">';
+    echo '<input type="text" name="join" placeholder="Write the name of the group" required />';
+    echo '<input type="submit" value="Join the group" />';
+    echo '</div>';
     echo '</form>';
     echo '</div>';
-  }
-  echo '</div>';
+
+    echo '</div>';
+    echo '<div class="place-holder-img-group">';
+    echo '<img src="../images/group.jpg" alt="image with a group" class="photo-for-first-part" height="500" width="600" />';
+    echo  '</div>';
+
+    echo '</div>';
+    echo '<div class="third-part-with-classes">';
+    echo '<div class="contanter-for-text">';
+    echo '<div class="message-welcome2">';
+    echo "<h1 class='question-about-classes'>Didn't create any group?</h1>";
+    echo '</div>';
+    echo '<div class="answer-about-classes">';
+    echo '<p class="answer">';
+    echo 'Create an online class, here you can share with people who have a common interest, discuss books and more.';
+    echo '</p>';
+    echo '</div>';
+    echo '<div class="create-class">';
+    echo '<form method="post" class="create-class">';
+    echo '<div class="col-for-subscribe">';
+    echo '<input type="text" name="create" placeholder="Write the name of the group" required />';
+    echo '<input type="submit" value="Create the group" />';
+    echo '</div>';
+    echo '</form>';
+    echo '</div>';
+
+    echo '</div>';
+    echo '<div class="place-holder-img-group">';
+    echo '<img src="../images/r-group.jpg" alt="image with a group" class="photo-for-first-part" height="500" width="600" />';
+    echo '</div>';
+    echo '</div>';
+    echo '<div class="first-part-opt">';
+    $sql = "SELECT DISTINCT group_name from group_users  WHERE username LIKE BINARY '%$username%'";
+    $sth = $db->prepare($sql);
+    $sth->execute();
+    $row_co = $sth->rowCount();
+    if ($row_co > 0) {
+      echo '<div class="secont-type-of-user-choese">';
+      echo '<h1 class="is-part-of">';
+      echo 'Already part of a class?';
+      echo '</h1>';
+      echo '<p class="is-part-text">';
+      echo 'Choose a group in order to communicate with the others.';
+      echo '</p>';
+      echo '</div>';
+      echo '<div class="opt-class">';
+      echo '<form method="post" class="cob">';
+      echo '<select class="dropdown-for-classes" name="taskOption">';
+
+      while ($row = $sth->fetch(PDO::FETCH_BOTH)) {
+        echo "<option class='opt1'>";
+        echo $row['group_name'];
+        echo "</option>";
+      }
+
+      echo '</select>';
+      echo ' <input type="submit" value="Submit the form"/>';
+      echo '</form>';
+      echo '</div>';
+    }
+    echo '</div>';
   }
   ?>
 
