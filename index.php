@@ -97,9 +97,9 @@
       while($row = $sth->fetch(PDO::FETCH_BOTH)){
           echo "<div class='top_five_layout'>";
               echo "<img class='top_five_image' alt='One of the last added books' src='reviewedImages/".$row['book_image']."'>";
-              echo "<p class='book_name'>".$row['book_name']."</p>";
-              echo "<p>".$row['book_author']."</p>";
-              echo "<p>".$row['book_genre']."</p>";
+              echo "<p class='book_name'>Name: ".$row['book_name']."</p>";
+              echo "<p>Author: ".$row['book_author']."</p>";
+              
               //echo "<p>".$row['book_review']."</p>"; //with this line you can get even the book review
               //but don't show it because it may be too long.
           echo "</div>";
@@ -124,8 +124,8 @@
           </div>
       </section>
     </section> -->
-
-            <section class="verticalSection">
+        <div class="second_part_container">
+            <div class="second_part">
                 <p class="quote_greeting">How about some insightful quotes? Here are some of our favourite: </p>
                 <section class="horizontalSection_statistics">
 
@@ -193,8 +193,41 @@
                         }, 3000);
                     </script>
                 </section>
-            </section>
+            </div>
+        
+            <div class="rss">
+                
+                <?php
+      //code used to get the last 5 images inserted in the database
+      $db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
+      $sql = "SELECT * FROM book_reviews order by review_date desc";
+      $sth = $db->prepare($sql);
+      $sth->execute();
+      
+      $i = 4;
+      //explanation: at every iteration we extract the image and the text from the db
+      //and we fill a div with the id img_div with it
+      //use PDO and prepare statements to avoid sql injection
+      echo "<h2 class = 'rss_headline'> RSS: Latest users that posted a review</h2>";
+      echo "<div>";
+      while($row = $sth->fetch(PDO::FETCH_BOTH)){
+          echo "<div>";
+             
+              echo "<p>".$row['username']." posted a review for ".$row['book_name']." on ".$row['review_date']."</p>";
+              
+              //echo "<p>".$row['book_review']."</p>"; //with this line you can get even the book review
+              //but don't show it because it may be too long.
+          echo "</div>";
+          $i-=1;
+          if($i == 0){
+              break;
+          }
+      }
+      echo "</div>"; //end of the top_five_parent div
+      ?>
+            </div>
 
+    </div>
         </section>
     </main>
 

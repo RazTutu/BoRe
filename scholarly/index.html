@@ -86,6 +86,7 @@
         3 pagini(Write a review, Classes, List of reviews) pentru utilizatorii obisnuiti care au cont si sunt logati, 
         utilizatorul administrator avand inca o pagina(Admin) in plus.
       </p>
+      <img src="../images/website_diagram.jpg">
       <section id="Root">
         <!-- review? -->
         <h3>Pagina principala</h3>
@@ -180,10 +181,6 @@
     <section id="semantics">
       <!-- review? -->
       <h2>Schema bazei de date</h2>
-      
-      
-      
-      
         <!--
           XXX needs rewrite, Dave doesn’t understand, ergo no one will
           DC suggests contrasting two examples: one in which I am eternally indentured to the
@@ -209,7 +206,8 @@
       ├─<a>book_author: varchar(40)</a>
       ├─<a>book_genre: varchar(50)</a>
       ├─<a>book_review: mediumtext</a>
-      └─<a>book_image: varchar(200)</a>
+      ├─<a>book_image: varchar(200)</a>
+      └─<a>review_date: datetime</a>
     └─<a>Tabel:book_progress</a>
       ├─<a>id: int(11) AI PK</a>
       ├─<a>username: varchar(45)</a>
@@ -217,6 +215,22 @@
       ├─<a>number_of_pages: int(11)</a>
       ├─<a>current_page: int(11)</a>
       └─<a>progress_Date: datetime</a>
+    └─<a>Tabel:group_users</a>
+      ├─<a>group_name: varchar(45)</a>
+      ├─<a>username: varchar(45)</a>
+      └─<a>is_group_admin: int(11)</a>
+    └─<a>Tabel:group_messages</a>
+      ├─<a>group_name: varchar(45)</a>
+      ├─<a>username: varchar(45)</a>
+      ├─<a>message: mediumtext</a>
+      └─<a>date: datetime</a>
+    └─<a>Tabel:mesaje_contact</a>
+      ├─<a>nume: varchar(45) PK</a>
+      ├─<a>prenume: varchar(45)</a>
+      ├─<a>email: varchar(45)</a>
+      └─<a>mesaj: mediumtext</a>
+    └─<a>Tabel:email_sub</a>
+      └─<a>user_email: varchar(50) PK</a>  
           </pre>
         </figure>
     </section>

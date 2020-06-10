@@ -41,7 +41,7 @@ if (isset($_POST['upload'])) {
 
     if (count($errors) == 0) {
         //execute sql statement
-        $sth = $db->prepare("INSERT INTO book_reviews(username, book_name, book_author, book_genre, book_review, book_image) values ('$username', '$book_name', '$book_author', '$book_genre', '$text', '$image')");
+        $sth = $db->prepare("INSERT INTO book_reviews(username, book_name, book_author, book_genre, book_review, book_image, review_date) values ('$username', '$book_name', '$book_author', '$book_genre', '$text', '$image', NOW())");
         $sth->execute();
         //now save the local file
         if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {

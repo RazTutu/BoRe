@@ -352,6 +352,7 @@
 .verticalSection{
   margin-top: 2em;
   margin-bottom: 2em;
+  width: 50%;
 }
 
 .middlePoz{
@@ -395,4 +396,46 @@
     margin-top: 2em;
     height: 10em;
   }
+}
+
+.second_part{
+  height: 20em;
+  width: 100%;
+}
+
+.rss{
+  width: 100%;
+  height: 20em;
+  text-align: center;
+}
+
+.second_part_container{
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 672px){
+  .second_part_container{
+    flex-direction: column;
+    justify-content: unset;
+  }
+}
+
+@media screen and (max-width: 657px){
+  .second_part{
+    height:21em;
+  }
+  .rss{
+    margin-top: 5em;
+  }
+}
+
+
+.rss_headline{
+  
+  
+  color: #ff4411;
+  font-family: "Signika", sans-serif;
+  -webkit-text-stroke: thin;
+
 }
