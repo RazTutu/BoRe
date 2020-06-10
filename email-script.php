@@ -1,9 +1,13 @@
 <?php
+
 if (isset($_POST['emailAdress'])) {
     $to = ($_POST['emailAdress']);
+    $db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
+    $sth = $db->prepare("INSERT INTO  email_sub(user_email) values (' $to');");
+    $sth->execute();
     require('Mail/phpmailer/PHPMailerAutoload.php');
     $mail = new PHPMailer;
-    $mail->isSMTP(); //CAND E HOSYTAT VA TREBUI SA FIE DEZACTIVAT
+    $mail->isSMTP(); //CAND E HOSTAT VA TREBUI SA FIE DEZACTIVAT
     $mail->Host = 'smtp.gmail.com';
     $mail->Port = 587;
     $mail->SMTPSecure = 'tls';
