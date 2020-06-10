@@ -394,3 +394,7 @@ input[name="create"],
   display: flex;
   align-items: center;
 }
+.cob {
+  display: flex;
+  flex-direction: row;
+}

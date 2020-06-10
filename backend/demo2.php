@@ -135,7 +135,8 @@ if (isset($_POST['join'])) {
     echo '</p>';
     echo '</div>';
     echo '<div class="opt-class">';
-    echo '<form method="post">';
+    echo '<form method="post" class="cob">';
+
     echo '<select class="dropdown-for-classes" name="taskOption">';
 
     $sql = "SELECT DISTINCT group_name from group_users";
@@ -148,17 +149,15 @@ if (isset($_POST['join'])) {
     }
 
     echo '</select>';
+    echo ' <input type="submit" value="Submit the form"/>';
     echo '</form>';
     echo '</div>';
     echo '</div>';
-
-    echo $option;
-    echo "baaaaaaaa11111111111111111";
   } else if (
     $option or
     $row_count_user > 0
   ) {
-    echo "baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+
     echo '<div class="secont-type-of-user-choese">';
     echo '<h1>';
     echo 'Bun venit inapoi!';
@@ -181,6 +180,7 @@ if (isset($_POST['join'])) {
     }
 
     echo '</select>';
+    echo ' <input type="submit" value="Submit the form"/>';
     echo '</form>';
     echo '</div>';
   }
