@@ -31,7 +31,7 @@ if (isset($_GET['title'])) {
             $sql = "SELECT * FROM book_reviews WHERE book_name LIKE '%$search%'";
         }
     }
-    echo $sql;
+
     $sth = $db->prepare($sql);
     $sth->execute();
     $row_count = $sth->rowCount();
