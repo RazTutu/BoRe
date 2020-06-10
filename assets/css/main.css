@@ -219,10 +219,20 @@
   max-height: 100%;
 }
 
-.loginElement{
-  display: flex;
-  margin: 0.25em;
-  flex-direction: column;
+.main_message_container{
+  width: 50%;
+  margin-left: 3em;
+  margin-top: 1.5em;
+}
+
+
+
+.login_container{
+  text-align: center;
+  margin-top: 3em;
+  width: 30%;
+  margin-right: 5em;
+  height: 13em;
 }
 
 #popup-login{
@@ -276,14 +286,14 @@
 
 .greetingMessage{
   text-indent: 1em;
-  margin: auto;
+
 }
 
 .greetingMessageTitle{
   font-weight: bold;
   font-size: large;
   text-indent: 2em;
-  margin: auto;
+  
 }
 
 .indentedText{
@@ -293,7 +303,7 @@
 .greetingMessagequote{
   font-style: oblique;
   text-indent: 2em;
-  margin: auto;
+ 
 }
 
 .contain {
@@ -357,4 +367,32 @@
 .ranking-image{
   width: 10em;
   height: 12em;
+}
+
+.main_paragrapf_title{
+  text-align: center;
+  color: red;
+}
+
+.text_login_section{
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1000px){
+  .text_login_section{
+    flex-direction: column-reverse;
+    justify-content: unset;
+  }
+
+  .main_message_container{
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .login_container{
+    width: 100%;
+    margin-top: 2em;
+    height: 10em;
+  }
 }

@@ -3,6 +3,7 @@
 <html lang="en">
     <head>
         <title>BookReviewer</title>
+        <meta name="viewport" content="width=device-width ,initial-scale=1.0"/>
         <link rel="shortcut icon" type="image/png" href="./images/favicon_browser.png"/>
         <meta name="description" content="Add book reviews so you can read them whenever you want.">
         <link rel="stylesheet" type="text/css" href="assets/css/header.css">
@@ -17,7 +18,7 @@
         <link rel="stylesheet" type="text/css" href="assets/css/loadingScreen.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        <meta name="viewport" content="width=device-width ,initial-scale=1.0"/>
+        
         <link rel="stylesheet" type="text/css" href="assets/css/top_five_books.css">
         <style>
      
@@ -36,15 +37,13 @@
 <main class="content" id="page">
   <section class = "mainLayout">
 
-    <section class = "verticalSection">
+      <div class="text_login_section">
 
-      <section  class="horizontalSection">
+        <div class="main_message_container">
 
-          <div class = "loginElement">
-
-              <p class='greetingMessageTitle'>
+              <h2 class='main_paragrapf_title'>
                   Why do you read so much?
-              </p>
+              </h2>
 
               <p class = 'greetingMessage'>
               In his book How to Read and Why, Harold Bloom says that we should read slowly, with love, openness and with our inner ear cocked. He explains we should read to increase our wit and 
@@ -57,28 +56,24 @@
               With the endless amount of perspectives and lives we can read about, books can give us an opportunity to have experiences that we haven’t had the opportunity to. While still allowing 
               us to learn the life skills they entail. Books are a fast rack to creating yourself.
               </p>
-          </div>
+        </div>
 
-          <div class = "loginElement">
-          </div>
           
-          <div class = "loginElement" id = "loginSection">
+          
+          <div class="login_container">
               <p id = "segment__title">
                   Welcome Back
               </p>
               <p id = "segment__message">
-                  Don't miss your next best read. Sign in to stay updated.
+                  Sign in to stay updated
               </p>
               <button type="button" id="popup-login">Login</button>   
-              <p id = "segment__message">
+              <p>
                   Not registered? Click here:
               </p>       
               <button type="button" id="popup-register">Register</button>
           </div>
-      </section>
-    </section>
-
-
+      </div>
     <section>
         <?php
       //code used to get the last 5 images inserted in the database
@@ -91,12 +86,12 @@
       //explanation: at every iteration we extract the image and the text from the db
       //and we fill a div with the id img_div with it
       //use PDO and prepare statements to avoid sql injection
-      echo "<p class = 'last_books_text'> The last six books reviewed are: <p>";
+      echo "<h2 class = 'last_books_text'> Latest reviewed books </h2>";
       echo "<div class='top_five_parent'>";
       while($row = $sth->fetch(PDO::FETCH_BOTH)){
           echo "<div class='top_five_layout'>";
               echo "<img class='top_five_image' alt='One of the last added books' src='reviewedImages/".$row['book_image']."'>";
-              echo "<p>".$row['book_name']."</p>";
+              echo "<p class='book_name'>".$row['book_name']."</p>";
               echo "<p>".$row['book_author']."</p>";
               echo "<p>".$row['book_genre']."</p>";
               //echo "<p>".$row['book_review']."</p>"; //with this line you can get even the book review

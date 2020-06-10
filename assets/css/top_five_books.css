@@ -1,11 +1,20 @@
 .top_five_layout{
     height: 20em;
     width: 12vw;
+    text-align: center;
+}
+
+.top_five_layout:hover{
+    border: 0.5px ridge orangered;
 }
 
 .top_five_image{
-    height: 10em;
-    width: 10em;
+    height: 14em;
+    width: 12em;
+}
+
+.book_name{
+    margin-top: 0.5em;
 }
 
 .top_five_parent{
@@ -18,7 +27,13 @@
 
 .last_books_text{
     text-indent: 3vw;
+    text-align: center;
+    color: #ff4411;
+    font-family: "Signika", sans-serif;
+    -webkit-text-stroke: thin;
+    margin-top: 2em;
 }
+
 
 @media screen and (min-width: 1000px) and (max-width: 1300px) {
     .top_five_layout {
