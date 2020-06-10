@@ -398,3 +398,42 @@ input[name="create"],
   display: flex;
   flex-direction: row;
 }
+@media screen and (max-width: 910px) {
+  .first-part-opt {
+    display: flex;
+    flex-direction: column;
+  }
+  .opt-class {
+    justify-content: center;
+  }
+  .secont-type-of-user-choese {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+  .cob {
+    width: 75%;
+    padding: 1em 0;
+  }
+}
+@media screen and (max-width: 580px) {
+  .is-part-of {
+    font-size: 1.1em;
+    text-align: center;
+  }
+  .is-part-text {
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-width: 430px) {
+  .is-part-of {
+    font-size: 1.5em;
+  }
+  .is-part-text {
+    font-size: 0.7em;
+  }
+  .cob {
+    width: 75%;
+    padding: 1em 0;
+  }
+}
