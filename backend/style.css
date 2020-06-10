@@ -10,7 +10,7 @@ body {
   min-height: 100%;
 }
 
-.content_validated{
+.content_validated {
   height: 100%;
   flex: 7;
 }
@@ -154,4 +154,10 @@ body {
 .logout:active {
   background-color: #b89b1c;
   box-shadow: 0 3px rgb(168, 130, 130);
+}
+@media screen and (max-width: 1415x) {
+  .content_validated {
+    display: flex;
+    flex-direction: column;
+  }
 }
