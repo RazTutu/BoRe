@@ -1,20 +1,13 @@
 <div class="firstPartFooter">
   <div class="footerElement-subscribe">
-    <div class="col-for-subscribe">
-      <input
-        type="text"
-        name="emailAdress"
-        placeholder="E-mail Adress"
-        required
-      />
-      <input type="submit" value="Subscribe" />
+    <div>
+      <form action="email-script.php" method="post" class="col-for-subscribe">
+        <input type="text" name="emailAdress" placeholder="E-mail Adress" required />
+        <input type="submit" value="Subscribe" name="sendEmail" />
+      </form>
     </div>
     <div class="registration-button-main">
-      <button
-        class="button-register"
-        id="popup-register2"
-        style="vertical-align:middle"
-      >
+      <button class="button-register" id="popup-register2" style="vertical-align:middle">
         <span>Register</span>
       </button>
     </div>

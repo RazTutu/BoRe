@@ -1,117 +1,124 @@
 <?php include('./backend/server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>BookReviewer</title>
-        <link rel="shortcut icon" type="image/png" href="./images/favicon_browser.png"/>
-        <meta name="description" content="Add book reviews so you can read them whenever you want.">
-        <link rel="stylesheet" type="text/css" href="assets/css/header.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/footer.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/popUps.css">
-        <script src="assets/js/loadingScreen.js"></script>
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/loadingScreen.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        <meta name="viewport" content="width=device-width ,initial-scale=1.0"/>
-        <link rel="stylesheet" type="text/css" href="assets/css/top_five_books.css">
-        <style>
-     
+
+<head>
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0" />
+    <title>BookReviewer</title>
+    <link rel="shortcut icon" type="image/png" href="./images/favicon_browser.png" />
+    <meta name="description" content="Add book reviews so you can read them whenever you want.">
+    <link rel="stylesheet" type="text/css" href="assets/css/header.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/popUps.css">
+    <script src="assets/js/loadingScreen.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/loadingScreen.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/top_five_books.css">
+    <style>
+
     </style>
-    </head>
+</head>
+
 <body class="body">
- 
+    <div id="loading">
+        <div class="loading_image">
+            <img src="images/loading.gif" class="bookGif" alt="loading screen happy book gif">
+        </div>
+    </div>
     <div class="header">
 
-    <?php
+        <?php
         include('header.html');
-    ?>
+        ?>
 
     </div>
 
-<main class="content" id="page">
-  <section class = "mainLayout">
+    <main class="content" id="page">
+        <section class="mainLayout">
 
-    <section class = "verticalSection">
+            <section class="verticalSection">
 
-      <section  class="horizontalSection">
+                <section class="horizontalSection">
 
-          <div class = "loginElement">
+                    <div class="loginElement">
 
-              <p class='greetingMessageTitle'>
-                  Why do you read so much?
-              </p>
+                        <p class='greetingMessageTitle'>
+                            Why do you read so much?
+                        </p>
 
-              <p class = 'greetingMessage'>
-              In his book How to Read and Why, Harold Bloom says that we should read slowly, with love, openness and with our inner ear cocked. He explains we should read to increase our wit and 
-              imagination, our sense of intimacy (in short, our entire consciousness) and also to heal our pain.
-              </p>
-              <p class = 'greetingMessagequote'>
-              “Until you become yourself, what benefit can you be to others.”
-              </p>
-              <p class = 'greetingMessage'>
-              With the endless amount of perspectives and lives we can read about, books can give us an opportunity to have experiences that we haven’t had the opportunity to. While still allowing 
-              us to learn the life skills they entail. Books are a fast rack to creating yourself.
-              </p>
-          </div>
+                        <p class='greetingMessage'>
+                            In his book How to Read and Why, Harold Bloom says that we should read slowly, with love, openness and with our inner ear cocked. He explains we should read to increase our wit and
+                            imagination, our sense of intimacy (in short, our entire consciousness) and also to heal our pain.
+                        </p>
+                        <p class='greetingMessagequote'>
+                            “Until you become yourself, what benefit can you be to others.”
+                        </p>
+                        <p class='greetingMessage'>
+                            With the endless amount of perspectives and lives we can read about, books can give us an opportunity to have experiences that we haven’t had the opportunity to. While still allowing
+                            us to learn the life skills they entail. Books are a fast rack to creating yourself.
+                        </p>
+                    </div>
 
-          <div class = "loginElement">
-          </div>
-          
-          <div class = "loginElement" id = "loginSection">
-              <p id = "segment__title">
-                  Welcome Back
-              </p>
-              <p id = "segment__message">
-                  Don't miss your next best read. Sign in to stay updated.
-              </p>
-              <button type="button" id="popup-login">Login</button>   
-              <p id = "segment__message">
-                  Not registered? Click here:
-              </p>       
-              <button type="button" id="popup-register">Register</button>
-          </div>
-      </section>
-    </section>
+                    <div class="loginElement">
+                    </div>
+
+                    <div class="loginElement" id="loginSection">
+                        <p id="segment__title">
+                            Welcome Back
+                        </p>
+                        <p id="segment__message">
+                            Don't miss your next best read. Sign in to stay updated.
+                        </p>
+                        <button type="button" id="popup-login">Login</button>
+                        <p id="segment__message">
+                            Not registered? Click here:
+                        </p>
+                        <button type="button" id="popup-register">Register</button>
+                    </div>
+                </section>
+            </section>
 
 
-    <section>
-        <?php
-      //code used to get the last 5 images inserted in the database
-      $db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
-      $sql = "SELECT * FROM book_reviews order by book_id desc";
-      $sth = $db->prepare($sql);
-      $sth->execute();
-      
-      $i = 6;
-      //explanation: at every iteration we extract the image and the text from the db
-      //and we fill a div with the id img_div with it
-      //use PDO and prepare statements to avoid sql injection
-      echo "<p class = 'last_books_text'> The last six books reviewed are: <p>";
-      echo "<div class='top_five_parent'>";
-      while($row = $sth->fetch(PDO::FETCH_BOTH)){
-          echo "<div class='top_five_layout'>";
-              echo "<img class='top_five_image' alt='One of the last added books' src='reviewedImages/".$row['book_image']."'>";
-              echo "<p>".$row['book_name']."</p>";
-              echo "<p>".$row['book_author']."</p>";
-              echo "<p>".$row['book_genre']."</p>";
-              //echo "<p>".$row['book_review']."</p>"; //with this line you can get even the book review
-              //but don't show it because it may be too long.
-          echo "</div>";
-          $i-=1;
-          if($i == 0){
-              break;
-          }
-      }
-      echo "</div>"; //end of the top_five_parent div
-      ?>
-    </section>
+            <section>
+                <?php
+                //code used to get the last 5 images inserted in the database
+                $db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
+                $sql = "SELECT * FROM book_reviews order by book_id desc";
+                $sth = $db->prepare($sql);
+                $sth->execute();
 
-    <!-- <section class = "verticalSection">
+                $i = 6;
+                //explanation: at every iteration we extract the image and the text from the db
+                //and we fill a div with the id img_div with it
+                //use PDO and prepare statements to avoid sql injection
+                echo "<p class = 'last_books_text'> The last six books reviewed are: <p>";
+                echo "<div class='top_five_parent'>";
+                while ($row = $sth->fetch(PDO::FETCH_BOTH)) {
+                    echo "<div class='top_five_layout'>";
+                    echo "<img class='top_five_image' alt='One of the last added books' src='reviewedImages/" . $row['book_image'] . "'>";
+                    echo "<p>" . $row['book_name'] . "</p>";
+                    echo "<p>" . $row['book_author'] . "</p>";
+                    echo "<p>" . $row['book_genre'] . "</p>";
+                    //echo "<p>".$row['book_review']."</p>"; //with this line you can get even the book review
+                    //but don't show it because it may be too long.
+                    echo "</div>";
+                    $i -= 1;
+                    if ($i == 0) {
+                        break;
+                    }
+                }
+                echo "</div>"; //end of the top_five_parent div
+                ?>
+            </section>
+
+            <!-- <section class = "verticalSection">
       <section  class="horizontalSection_statistics">
           <div class="statistics">      
           <p class="statistics_text">
@@ -124,94 +131,91 @@
       </section>
     </section> -->
 
-    <section class = "verticalSection">
-        <p class = "quote_greeting">How about some insightful quotes? Here are some of our favourite: </p>
-        <section  class="horizontalSection_statistics">
-         
-            <div>
-                <div>
-                    <img class ="ranking-image" src="images/George_R._R._Martin.jpg" alt="placeholderImage">
-                    <p class="ranking-quote">“Sleep is good, he said, and books are better.”</p>
-                    <p class="ranking-name">George R.R. Martin</p>
-                </div>
-            </div>
+            <section class="verticalSection">
+                <p class="quote_greeting">How about some insightful quotes? Here are some of our favourite: </p>
+                <section class="horizontalSection_statistics">
 
-            <script type="text/javascript">
-            var count1 = 1;
-            var count2 = 1;
-            var count3 = 1;
-            
-            var images = [];
-            images[0] = "images/George_R._R._Martin.jpg"
-            images[1] = "images/Charles_W._Eliot.jpg"
-            images[2] = "images/Jane Smiley.jpg"
-            images[3] = "images/IsabelAllende.jpg"
-            images[4] = "images/J.K. Rowling.jpg"
-            images[5] = "images/Carl Sagan.jpg"
-            images[6] = "images/Neil Gaiman.jpg"
-            images[7] = "images/E.B. White.jpg"
-            images[8] = "images/Charles Baudelaire.jpg"
-            
-            var names = ['George R.R. Martin', 'Charles W. Eliot', 'Jane Smiley', 'Isabel Allende', 'J.K. Rowling', 'Carl Sagan',  'Neil Gaiman', 'E.B. White', 'Charles Baudelaire'];
-            var quotes = ['“Sleep is good, he said, and books are better.”','“Books are the quietest and most constant of friends; they are the most accessible and wisest of counselors, and the most patient of teachers.”','“Many people, myself among them, feel better at the mere sight of a book.”','“The library is inhabited by spirits that come out of the pages at night.”','“If you don’t like to read, you haven’t found the right book.”','“One glance at a book and you hear the voice of another person, perhaps someone dead for 1,000 years. To read is to voyage through time.”','“Fairy tales are more than true: not because they tell us that dragons exist, but because they tell us that dragons can be beaten.”','“Books are good company, in sad times and happy times, for books are people – people who have managed to stay alive by hiding between the covers of a book.”','“A book is a garden, an orchard, a storehouse, a party, a company by the way, a counselor, a multitude of counselors.”'];
-            
-            
-            var quotesContainer = document.getElementsByClassName('ranking-quote');
-            var namesContainer = document.getElementsByClassName('ranking-name');
-            var imagesContainer = document.getElementsByClassName("ranking-image");
+                    <div>
+                        <div>
+                            <img class="ranking-image" src="images/George_R._R._Martin.jpg" alt="placeholderImage">
+                            <p class="ranking-quote">“Sleep is good, he said, and books are better.”</p>
+                            <p class="ranking-name">George R.R. Martin</p>
+                        </div>
+                    </div>
 
-            setInterval(function(){
-                for(var i = 0; i<8; i++){
-                imagesContainer[i].src= images[count3];
-                count3++;
-                if(count3 == images.length){
-                    count3 = 0;
-                };
-                }
-            }, 3000);
-            
-            
-            setInterval(function(){
-                for(var i = 0; i<8; i++){
-                quotesContainer[i].innerHTML= quotes[count1];
-                count1++;
-                if(count1 == quotes.length){
-                    count1 = 0;
-                };
-                }
-            }, 3000);
-            
-            setInterval(function(){
-                for(var i = 0; i<8; i++){
-                namesContainer[i].innerHTML =names[count2];
-                count2++;
-                if(count2 == names.length){
-                    count2 = 0;
-                };
-                }
-            }, 3000);
-            </script>
-      </section>
-    </section>
+                    <script type="text/javascript">
+                        var count1 = 1;
+                        var count2 = 1;
+                        var count3 = 1;
 
-  </section>
-</main>
+                        var images = [];
+                        images[0] = "images/George_R._R._Martin.jpg"
+                        images[1] = "images/Charles_W._Eliot.jpg"
+                        images[2] = "images/Jane Smiley.jpg"
+                        images[3] = "images/IsabelAllende.jpg"
+                        images[4] = "images/J.K. Rowling.jpg"
+                        images[5] = "images/Carl Sagan.jpg"
+                        images[6] = "images/Neil Gaiman.jpg"
+                        images[7] = "images/E.B. White.jpg"
+                        images[8] = "images/Charles Baudelaire.jpg"
+
+                        var names = ['George R.R. Martin', 'Charles W. Eliot', 'Jane Smiley', 'Isabel Allende', 'J.K. Rowling', 'Carl Sagan', 'Neil Gaiman', 'E.B. White', 'Charles Baudelaire'];
+                        var quotes = ['“Sleep is good, he said, and books are better.”', '“Books are the quietest and most constant of friends; they are the most accessible and wisest of counselors, and the most patient of teachers.”', '“Many people, myself among them, feel better at the mere sight of a book.”', '“The library is inhabited by spirits that come out of the pages at night.”', '“If you don’t like to read, you haven’t found the right book.”', '“One glance at a book and you hear the voice of another person, perhaps someone dead for 1,000 years. To read is to voyage through time.”', '“Fairy tales are more than true: not because they tell us that dragons exist, but because they tell us that dragons can be beaten.”', '“Books are good company, in sad times and happy times, for books are people – people who have managed to stay alive by hiding between the covers of a book.”', '“A book is a garden, an orchard, a storehouse, a party, a company by the way, a counselor, a multitude of counselors.”'];
 
 
-<footer class="mainFooter ">
-<?php
-        include('footer.html');
-?>
-</footer>
+                        var quotesContainer = document.getElementsByClassName('ranking-quote');
+                        var namesContainer = document.getElementsByClassName('ranking-name');
+                        var imagesContainer = document.getElementsByClassName("ranking-image");
 
-<?php
-        include('popUps.php');
-?>
+                        setInterval(function() {
+                            for (var i = 0; i < 8; i++) {
+                                imagesContainer[i].src = images[count3];
+                                count3++;
+                                if (count3 == images.length) {
+                                    count3 = 0;
+                                };
+                            }
+                        }, 3000);
 
-<div id="loading">
-    <div class="loading_image">
-        <img src="images/loading.gif" class="bookGif" alt="loading screen happy book gif">
-    </div>
-</div> 
+
+                        setInterval(function() {
+                            for (var i = 0; i < 8; i++) {
+                                quotesContainer[i].innerHTML = quotes[count1];
+                                count1++;
+                                if (count1 == quotes.length) {
+                                    count1 = 0;
+                                };
+                            }
+                        }, 3000);
+
+                        setInterval(function() {
+                            for (var i = 0; i < 8; i++) {
+                                namesContainer[i].innerHTML = names[count2];
+                                count2++;
+                                if (count2 == names.length) {
+                                    count2 = 0;
+                                };
+                            }
+                        }, 3000);
+                    </script>
+                </section>
+            </section>
+
+        </section>
+    </main>
+
+
+    <footer class="mainFooter ">
+        <?php
+        include('footer.php');
+        ?>
+    </footer>
+
+    <?php
+    include('popUps.php');
+    ?>
+
+
 </body>
+
 </html>
