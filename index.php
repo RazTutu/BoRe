@@ -73,14 +73,14 @@
               <p id = "segment__message">
                   Sign in to stay updated
               </p>
-              <button type="button" id="popup-login">Login</button>   
+              <button type="button" id="popup-login" class="login-btn">Login</button>   
               <p>
                   Not registered? Click here:
               </p>       
               <button type="button" id="popup-register">Register</button>
           </div>
       </div>
-    <section>
+    <section class="latest-books-style">
         <?php
       //code used to get the last 5 images inserted in the database
       $db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');

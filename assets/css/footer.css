@@ -134,7 +134,7 @@ input:hover,
 }
 
 /* style the submit button */
-input[type="submit"] {
+.footer_button {
   background-color: #4caf50;
   color: rgb(0, 0, 0);
   cursor: pointer;
@@ -143,7 +143,7 @@ input[type="submit"] {
   font-family: inherit;
 }
 
-input[type="submit"]:hover {
+.footer_button {
   background-color: #45a049;
 }
 

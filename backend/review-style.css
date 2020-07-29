@@ -198,12 +198,7 @@ input[name="create"],
 .join-class {
   width: 100%;
 }
-.output {
-  text-align: center;
-  text-transform: uppercase;
-  color: #4caf50;
-  font-family: monospace;
-}
+
 .second-part-with-classes {
   display: flex;
   flex-direction: row-reverse;

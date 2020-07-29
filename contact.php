@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="assets/css/popUps.css">
     <link rel="stylesheet" type="text/css" href="assets/css/contact-body.css">
+    <link rel="stylesheet" type="text/css" href="backend/review_image_style.css">
     <script src="assets/js/loadingScreen.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">

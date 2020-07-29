@@ -1,20 +1,16 @@
 /* css for the contact page */
 
-.formMessage{
-    text-indent: 6vw;
-}
+
 
 .contactLabel{
     text-indent: 3vw;
     margin-bottom: 1em;
-    display: flex;
-    flex-direction: column;
-
 }
 
 .contactForm{
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 1vw;
 }
 
@@ -45,3 +41,43 @@
     width: 100%;
     height: 100%;
 }
+
+
+
+.contact-form-parent-final{
+    width: 100%;
+    height: 100%;
+}
+
+.contact-image{
+    width: 100%;
+    height: 100%;
+}
+
+.contact-zone{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2em;
+    padding-top: 1em;
+}
+
+ .button_style_updated{
+    font-size: 1em;
+    padding: 0.5em 2em;
+    border-radius: 5%;
+    transition-duration: 0.4s;
+    background-color: white;
+    color: black;
+    border: 2px solid #555555
+ }
+
+ .chat-image{
+    height: 300px;
+    width: 100%;
+    border: 2px solid red;
+ }
+
+ .contact-book-image{
+    width: 30em;
+    height: 15em;
+ }

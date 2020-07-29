@@ -3,7 +3,7 @@
     <div>
       <form action="email-script.php" method="post" class="col-for-subscribe">
         <input type="text" name="emailAdress" placeholder="E-mail Adress" required />
-        <input type="submit" value="Subscribe" name="sendEmail" />
+        <input type="submit" value="Subscribe" name="sendEmail" class="footer_button"/>
       </form>
     </div>
     <div class="registration-button-main">

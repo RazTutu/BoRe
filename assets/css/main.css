@@ -229,10 +229,14 @@
 
 .login_container{
   text-align: center;
-  margin-top: 3em;
+  margin-top: 2em;
   width: 30%;
   margin-right: 5em;
   height: 13em;
+}
+
+.login_container > * {
+  margin-top: 1em;
 }
 
 #popup-login{
@@ -244,6 +248,7 @@
   color: black;
   border: 2px solid #555555
 }
+
 
 #popup-login:hover{
   background-color: #555555;
@@ -430,6 +435,12 @@
   }
 }
 
+@media screen and (max-width: 1000px){
+  .main_message_container{
+    margin-top: 5em;
+  }
+}
+
 
 .rss_headline{
   
@@ -439,3 +450,5 @@
   -webkit-text-stroke: thin;
 
 }
+
+
