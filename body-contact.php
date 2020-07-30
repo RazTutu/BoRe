@@ -59,7 +59,7 @@ if (count($errors) == 0) {
     <!-- TESTING -->
     <div class="contact-zone">
     <div class="contact-form-parent-final">
-    <form method="post" enctype="multipart/form-data" class="add_review_form">
+        <form method="post" enctype="multipart/form-data" class="add_review_form">
 
             <h1 class="header_message">Contact us</h1>
             <input type="text" name="Nume" id="book_name_id" placeholder="First name" class="input_field" required>
@@ -81,11 +81,11 @@ if (count($errors) == 0) {
             </div>
 
         <div class="contact-image">
-            <h1>text</h1>
+            <h3 class="contact-top-text">Talk with us about anything you want</h3>
             <div class="chat-image">
                 <img src="./images/contact-image.jpg" class="contact-book-image"/>
             </div>
         </div>
 
-            </div>
+    </div>
 </div>

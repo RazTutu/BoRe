@@ -52,6 +52,7 @@
 .contact-image{
     width: 100%;
     height: 100%;
+    margin-top: 2em;
 }
 
 .contact-zone{
@@ -74,10 +75,49 @@
  .chat-image{
     height: 300px;
     width: 100%;
-    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
  }
 
  .contact-book-image{
     width: 30em;
-    height: 15em;
+    height: 17em;
+    border-radius: 8px;
  }
+
+ .contact-top-text{
+     text-align: center;
+     color: #ff4411;
+ }
+
+.header_message, .review_zone_label{
+    color: #ff4411;
+}
+
+
+@media screen and (max-width: 800px) {
+    .contact-zone{
+        flex-direction: column-reverse;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .contact-book-image{
+        width: 20em;
+        height: 14em;
+    }
+
+    .contact-zone{
+        padding-top: 0em;
+    }
+
+    
+}
+
+@media screen and (max-width: 700px){
+    .mapWrapper{
+        height: 15em;
+        margin-top: 1em;
+    }
+}

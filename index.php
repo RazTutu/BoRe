@@ -51,14 +51,16 @@
                   Why do you read so much?
               </h2>
 
-              <p class = 'greetingMessage'>
+              <p class = "greetingMessage">
               In his book How to Read and Why, Harold Bloom says that we should read slowly, with love, openness and with our inner ear cocked. He explains we should read to increase our wit and 
               imagination, our sense of intimacy (in short, our entire consciousness) and also to heal our pain.
               </p>
-              <p class = 'greetingMessagequote'>
+              <br>
+              <p class = "greetingMessagequote">
               “Until you become yourself, what benefit can you be to others.”
               </p>
-              <p class = 'greetingMessage'>
+              <br>
+              <p class = "greetingMessage">
               With the endless amount of perspectives and lives we can read about, books can give us an opportunity to have experiences that we haven’t had the opportunity to. While still allowing 
               us to learn the life skills they entail. Books are a fast rack to creating yourself.
               </p>
@@ -83,8 +85,8 @@
     <section class="latest-books-style">
         <?php
       //code used to get the last 5 images inserted in the database
-      $db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
       $sql = "SELECT * FROM book_reviews order by book_id desc";
+      include('database.php');
       $sth = $db->prepare($sql);
       $sth->execute();
       
@@ -100,8 +102,6 @@
               echo "<p class='book_name'>Name: ".$row['book_name']."</p>";
               echo "<p>Author: ".$row['book_author']."</p>";
               
-              //echo "<p>".$row['book_review']."</p>"; //with this line you can get even the book review
-              //but don't show it because it may be too long.
           echo "</div>";
           $i-=1;
           if($i == 0){
@@ -112,31 +112,22 @@
       ?>
     </section>
 
-    <!-- <section class = "verticalSection">
-      <section  class="horizontalSection_statistics">
-          <div class="statistics">      
-          <p class="statistics_text">
-              Statistics
-          </p>
-          </div>
-          <div>
-              <img src="https://picsum.photos/1700/200" alt="placeholderImage" class= "info">
-          </div>
-      </section>
-    </section> -->
         <div class="second_part_container">
             <div class="second_part">
-                <p class="quote_greeting">How about some insightful quotes? Here are some of our favourite: </p>
-                <section class="horizontalSection_statistics">
+                <div class="quote-text">
+                    <h4 class="quote_greeting">How about some insightful quotes?<br>Here are some of our favourite: </h4>
+                </div>
 
-                    <div>
-                        <div>
-                            <img class="ranking-image" src="images/George_R._R._Martin.jpg" alt="placeholderImage">
-                            <p class="ranking-quote">“Sleep is good, he said, and books are better.”</p>
+                <div class="quote-person-zone">
+                <section class="horizontalSection_statistics">
+                    <div class="quote-below-image">
+                        <img class="ranking-image" src="images/George_R._R._Martin.jpg" alt="placeholderImage">
+                        <div class="text-below-image">
                             <p class="ranking-name">George R.R. Martin</p>
+                            <p class="ranking-quote">“A reader lives a thousand lives before he dies, said Jojen. The man who never reads lives only one.”</p>
                         </div>
                     </div>
-
+                    
                     <script type="text/javascript">
                         var count1 = 1;
                         var count2 = 1;
@@ -145,7 +136,7 @@
                         var images = [];
                         images[0] = "images/George_R._R._Martin.jpg"
                         images[1] = "images/Charles_W._Eliot.jpg"
-                        images[2] = "images/Jane Smiley.jpg"
+                        images[2] = "images/Jane_Smiley.jpeg"
                         images[3] = "images/IsabelAllende.jpg"
                         images[4] = "images/J.K. Rowling.jpg"
                         images[5] = "images/Carl Sagan.jpg"
@@ -154,7 +145,15 @@
                         images[8] = "images/Charles Baudelaire.jpg"
 
                         var names = ['George R.R. Martin', 'Charles W. Eliot', 'Jane Smiley', 'Isabel Allende', 'J.K. Rowling', 'Carl Sagan', 'Neil Gaiman', 'E.B. White', 'Charles Baudelaire'];
-                        var quotes = ['“Sleep is good, he said, and books are better.”', '“Books are the quietest and most constant of friends; they are the most accessible and wisest of counselors, and the most patient of teachers.”', '“Many people, myself among them, feel better at the mere sight of a book.”', '“The library is inhabited by spirits that come out of the pages at night.”', '“If you don’t like to read, you haven’t found the right book.”', '“One glance at a book and you hear the voice of another person, perhaps someone dead for 1,000 years. To read is to voyage through time.”', '“Fairy tales are more than true: not because they tell us that dragons exist, but because they tell us that dragons can be beaten.”', '“Books are good company, in sad times and happy times, for books are people – people who have managed to stay alive by hiding between the covers of a book.”', '“A book is a garden, an orchard, a storehouse, a party, a company by the way, a counselor, a multitude of counselors.”'];
+                        var quotes = ['“A reader lives a thousand lives before he dies, said Jojen. The man who never reads lives only one.”',
+                         '“Books are the quietest and most constant of friends; they are the most accessible and wisest of counselors, and the most patient of teachers.”', 
+                         '“The fact is that the same sequence of days can arrange themselves into a number of different stories.”',
+                         '“We all have an unsuspected reserve of strength inside that emerges when life puts us to the test.”', 
+                         '“The truth. It is a beautiful and terrible thing, and must therefore be treated with great caution.”', 
+                         '“One glance at a book and you hear the voice of another person, perhaps someone dead for 1,000 years. To read is to voyage through time.”',
+                         '“Fairy tales are more than true: not because they tell us that dragons exist, but because they tell us that dragons can be beaten.”', 
+                         '“Books are good company, in sad times and happy times, for books are people – people who have managed to stay alive by hiding between the covers of a book.”', 
+                         '“A book is a garden, an orchard, a storehouse, a party, a company by the way, a counselor, a multitude of counselors.”'];
 
 
                         var quotesContainer = document.getElementsByClassName('ranking-quote');
@@ -169,7 +168,7 @@
                                     count3 = 0;
                                 };
                             }
-                        }, 3000);
+                        }, 5000);
 
 
                         setInterval(function() {
@@ -180,7 +179,7 @@
                                     count1 = 0;
                                 };
                             }
-                        }, 3000);
+                        }, 5000);
 
                         setInterval(function() {
                             for (var i = 0; i < 8; i++) {
@@ -190,16 +189,17 @@
                                     count2 = 0;
                                 };
                             }
-                        }, 3000);
+                        }, 5000);
                     </script>
                 </section>
+                </div>
             </div>
         
             <div class="rss">
                 
                 <?php
       //code used to get the last 5 images inserted in the database
-      $db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
+      include('database.php');
       $sql = "SELECT * FROM book_reviews order by review_date desc";
       $sth = $db->prepare($sql);
       $sth->execute();

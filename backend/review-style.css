@@ -151,18 +151,7 @@
   align-self: center;
   justify-content: center;
 }
-input[type="submit"] {
-  background-color: #ffbb54;
-  color: rgb(0, 0, 0);
-  cursor: pointer;
-  border: none;
-  padding: 1em;
-  font-family: serif;
-}
 
-input[type="submit"]:hover {
-  background-color: #45a049;
-}
 input[name="join"],
 .btn {
   padding: 1em;
