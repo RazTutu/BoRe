@@ -22,7 +22,7 @@ function alert($msg)
 }
 
 //connect to db
-$db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
+include('database.php');
 
 $adminFound = "";
 if (isset($_POST['updateAdmin'])) {
@@ -92,7 +92,7 @@ if (isset($_POST['book_remove'])) {
         var data = google.visualization.arrayToDataTable([
             ['Users', 'Posts'],
             <?php
-            $dbh = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
+            include('database.php');
             $sth = $dbh->prepare("select username, count(username) as number_of_reviews from book_reviews group by username
                               order by number_of_reviews desc limit 10;");
             $sth->execute();
@@ -135,7 +135,7 @@ if (isset($_POST['book_remove'])) {
         var data = google.visualization.arrayToDataTable([
             ['Users', 'Posts'],
             <?php
-            $dbh = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
+            include('database.php');
             $sth = $dbh->prepare("select book_name, count(book_name) as number_of_books from book_progress
                             group by book_name order by number_of_books desc limit 10;");
             $sth->execute();

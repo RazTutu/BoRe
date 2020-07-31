@@ -1,5 +1,5 @@
 <?php
-$db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
+include('database.php');
 $sth1 = $db->prepare("select book_name,book_author, count(book_review) as number_of_reviews from book_reviews group by book_name,book_author order by number_of_reviews desc;");
 $sth1->execute();
 $data_export = "";

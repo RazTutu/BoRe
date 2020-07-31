@@ -14,7 +14,7 @@ if (isset($_POST['upload'])) {
     //All the form errors(empty fields for example) will be stored inside errors array
     $errors = array();
     //connect to the db
-    $db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
+    include('database.php');
     //get the subbmited data
     $image = $_FILES['image']['name'];
     $text = $_POST['text'];
@@ -69,7 +69,7 @@ if (isset($_POST['upload_progress_form'])) {
     //All the form errors(empty fields for example) will be stored inside errors array
     $errors = array();
     //connect to the db
-    $db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
+    include('database.php');
     //get the subbmited data
     $username = $_SESSION['username'];
     $book_name = $_POST['progress_book_name'];
@@ -92,7 +92,7 @@ if (isset($_POST['upload_progress_form'])) {
 }
 
 if(isset($_POST['updateProgress'])){
-    $db = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
+    include('database.php');
     $progressValue = $_POST['progress_bar_value'];
     $name_of_user = $_SESSION['username'];
     $name_of_book = $_SESSION['last_progress_session'];
@@ -119,7 +119,7 @@ if (isset($_GET['logout'])) {
         <form method="post" enctype="multipart/form-data" class="add_review_form">
             <?php
             //$db = mysqli_connect('eu-cdbr-west-02.cleardb.net', 'bb805e9a46b13e', '5b8a2c50', 'heroku_18acf4529517193', '3306');
-            $dbh = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
+            include('database.php');
             $sth = $dbh->prepare("SELECT count(username) as total from book_reviews WHERE username=" . "'" . $_SESSION['username'] . "'" . ";");
             $sth->execute();
             $number_of_rows = $sth->fetchColumn();
@@ -181,7 +181,7 @@ if (isset($_GET['logout'])) {
             <h2>Your latest book progress</h2>
             
             <?php
-                $dbh = new \PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_18acf4529517193', 'bb805e9a46b13e', '5b8a2c50');
+                include('database.php');
                 $sth = $dbh->prepare("SELECT * from book_progress WHERE username=" . "'" . $_SESSION['username'] . "'" . 
                 "ORDER BY progress_Date DESC
                 LIMIT 1" . ";");
