@@ -7,4 +7,4 @@ Improved more than the initial requirements in order to learn as mush as possibl
 
 Languages: PHP, MySql, HTML, CSS, Javascript.
 
-Live link: http://bookreviewtw.000webhostapp.com/
+Live link: https://bookreviewtw.herokuapp.com/
